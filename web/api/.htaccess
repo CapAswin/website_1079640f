@@ -1,0 +1,33 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # STRICTLY limit to /influencer_house/api/ directory
+    RewriteCond %{REQUEST_URI} !^/web/api
+    RewriteRule ^ - [L]
+    
+    # Set base to api directory
+    RewriteBase /web/api
+    
+    # API endpoint routing - remove .php extension
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.*)$ $1.php [QSA,L]
+    
+    # CORS headers
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+    
+    # Handle OPTIONS method for preflight requests
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
+
+Options -Indexes
+
+# Deny access to all other directories
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} !^/web/api
+    RewriteRule ^ - [F,L]
+</IfModule>

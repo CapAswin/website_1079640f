@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICONS ICON -->
+    <link rel="icon" href="assets/img/fav.png" type="icon">
+    <title>Brand Dashboard</title>
+
+    <!-- libraries CSS -->
+    <link rel="stylesheet" href="assets/font/flaticon_jio_-_influencer.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
+    <link rel="stylesheet" href="assets/vendor/plyr/plyr.css">
+    <link rel="stylesheet" href="assets/vendor/slim-select/slimselect.css">
+    <link rel="stylesheet" href="assets/vendor/no-ui-slider/nouislider.min.css">
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- sidebar -->
+    <div class="jo-sidebar">
+        <div>
+            <div class="jo-sidebar__heading d-flex justify-content-between align-items-center">
+                <a href="#"><img src="assets/img/favicon.png" alt="logo" class="logo"></a>
+                <button type="button" class="jo-sidebar-close-btn"><i class="flaticon-add-plus-button"></i></button>
+            </div>
+            <div class="jo-header-nav-in-mobile"></div>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/opulentinfluencershouse/" class="jo-btn" target="_blank" rel="noopener noreferrer"><i class="flaticon-add-plus-button"></i>Follow Me</a>
+            <div class="tt-footer-top__socials jo-footer-top__socials jo-sidebar-socials justify-content-start justify-content-sm-end">
+                <a href="#"><i class="flaticon-facebook-1"></i></a>
+                <a href="#"><i class="flaticon-twitter"></i></a>
+                <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer"><i class="flaticon-social-media"></i></a>
+                <a href="#"><i class="flaticon-youtube-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="jo-header">
+        <div class="logo">
+            <a href="index.html"><img src="assets/img/favicon.png" alt="logo"></a>
+        </div>
+        <div class="jo-header-right">
+            <div class="jo-header-nav">
+                <div class="to-go-to-sidebar-in-mobile">
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="for-brands.html">For Brands</a>
+                        <a href="for-influencers.html">For Influencers</a>
+                        <a href="service.html">Services</a>
+                        <a href="blog.html">Blogs</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="https://www.instagram.com/opulentinfluencershouse/" class="jo-btn" target="_blank" rel="noopener noreferrer"><i class="flaticon-add-plus-button"></i>Follow Me</a>
+                <button class="jo-header-sidebar-open-btn jo-btn px-3 d-inline-block d-lg-none"><i class="flaticon-menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+       <div class="dashboards">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+     <img src="assets/img/logo.png" alt="logo" class="logo">
+      <h2>Opulent<span>IH</span></h2>
+    </div>
+
+    <nav>
+      <a href="dashboard-brand.html" class="active">Dashboard</a>
+      <a href="brand-form.html">My Brand</a>
+      <a href="#">Campaigns</a>
+      <a href="#">Influencers</a>
+      <a href="#">Analytics</a>
+      <a href="#">Settings</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Brand Command Center</h1>
+        <p>Manage your campaigns and collaborate with the right influencers</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800" alt="Brand collaboration">
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat-card">
+        <h4>Active Campaigns</h4>
+        <span>4</span>
+      </div>
+      <div class="stat-card">
+        <h4>Influencers Partnered</h4>
+        <span>18</span>
+      </div>
+      <div class="stat-card">
+        <h4>Pending Invites</h4>
+        <span>5</span>
+      </div>
+      <div class="stat-card">
+        <h4>Budget Spent (MTD)</h4>
+        <span>$48,200</span>
+      </div>
+    </section>
+
+    <!-- MY CAMPAIGNS -->
+    <section class="table-section">
+      <div class="section-header">
+        <h2>My Campaigns</h2>
+        <a href="#" class="view-all">View all →</a>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th>Influencer</th>
+            <th>Platform</th>
+            <th>Status</th>
+            <th>Budget</th>
+          </tr>
+        </thead>
+        <tbody class="dsh">
+          <tr>
+            <td>Spring Collection Launch</td>
+            <td>Ayesha Khan</td>
+            <td>Instagram</td>
+            <td class="status-active">Active</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Product Unboxing Series</td>
+            <td>Daniel Blue</td>
+            <td>YouTube</td>
+            <td class="status-completed">Completed</td>
+            <td>$6,800</td>
+          </tr>
+          <tr>
+            <td>TikTok Skincare Challenge</td>
+            <td>Sara Noor</td>
+            <td>TikTok</td>
+            <td class="status-pending">Pending</td>
+            <td>$1,500</td>
+          </tr>
+          <tr>
+            <td>Summer Lookbook</td>
+            <td>Marcus Lee</td>
+            <td>Instagram</td>
+            <td class="status-active">Active</td>
+            <td>$3,200</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- PARTNERED INFLUENCERS -->
+    <section class="influencers">
+      <div class="section-header">
+        <h2>Partnered Influencers</h2>
+        <a href="#" class="view-all">View all →</a>
+      </div>
+
+      <div class="influencer-grid">
+        <div class="influencer-card">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300" alt="Ayesha Khan">
+          <h3>Ayesha Khan</h3>
+          <p>Instagram • 2.3M</p>
+        </div>
+
+        <div class="influencer-card">
+          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=300" alt="Daniel Blue">
+          <h3>Daniel Blue</h3>
+          <p>YouTube • 1.8M</p>
+        </div>
+
+        <div class="influencer-card">
+          <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=300" alt="Sara Noor">
+          <h3>Sara Noor</h3>
+          <p>TikTok • 3.1M</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="quick-actions">
+      <h2>Quick Actions</h2>
+      <div class="action-grid">
+        <a href="brand-form.html" class="action-card">
+          <span class="action-icon">✏️</span>
+          <span>Update Brand Profile</span>
+        </a>
+        <a href="#" class="action-card">
+          <span class="action-icon">➕</span>
+          <span>New Campaign</span>
+        </a>
+        <a href="#" class="action-card">
+          <span class="action-icon">🔍</span>
+          <span>Find Influencers</span>
+        </a>
+        <a href="#" class="action-card">
+          <span class="action-icon">💬</span>
+          <span>Messages</span>
+        </a>
+      </div>
+    </section>
+</div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="jo-footer">
+        <div class="jo-container">
+            <div class="jo-footer-top">
+                <div class="row gx-4 gy-sm-5 gy-4 align-items-center">
+                    <div class="col-lg-3 col-6 col-xxs-12">
+                        <a href="index.html"><img src="assets/img/logo1.png" alt="logo" class="logo"></a>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 order-2">
+                        <form action="#" class="jo-footer-top__nwsltr">
+                            <input type="email" name="jo-nwsltr-email" id="jo-nwsltr-email" placeholder="Email Address">
+                            <button class="jo-btn" type="submit">Get Newsletter</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-6 col-xxs-12 order-lg-2 order-1">
+                        <div class="tt-footer-top__socials jo-footer-top__socials justify-content-start justify-content-sm-end">
+                            <a href="#"><i class="flaticon-facebook-1"></i></a>
+                            <a href="#"><i class="flaticon-twitter"></i></a>
+                            <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer"><i class="flaticon-social-media"></i></a>
+                            <a href="#"><i class="flaticon-youtube-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="jo-footer-middle">
+                <div class="row g-4">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="jo-footer-widget jo-footer-contact">
+                            <h5 class="jo-footer-widget__title">Get in Touch</h5>
+                            <a href="mailto:contact.me@gmail.com">contact.me@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="jo-footer-widget jo-footer-links">
+                            <h5 class="jo-footer-widget__title">Browse Categories</h5>
+                            <div class="links">
+                                <a href="#">Music</a>
+                                <a href="#">Sports</a>
+                                <a href="#">Gaming</a>
+                                <a href="#">Fashion</a>
+                                <a href="#">Art</a>
+                                <a href="#">Photography</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="jo-footer-widget jo-footer-gallery">
+                            <h5 class="jo-footer-widget__title">Instagram feed</h5>
+                            <div class="imgs flex-wrap">
+                                <img src="assets/img/footer-img-1.jpg" alt="Footer Image">
+                                <img src="assets/img/footer-img-2.jpg" alt="Footer Image">
+                                <img src="assets/img/footer-img-3.jpg" alt="Footer Image">
+                                <img src="assets/img/footer-img-4.jpg" alt="Footer Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tt-footer-bottom text-center">
+                <p class="mb-0">Copyright ©2024 Developed by&nbsp;Influtics</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- libraries JS -->
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/slim-select/slimselect.min.js"></script>
+    <script src="assets/vendor/plyr/plyr.polyfilled.js"></script>
+    <script src="assets/vendor/no-ui-slider/nouislider.min.js"></script>
+    <script src="assets/vendor/fs-lightbox/fslightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /dashboard/
+
+# Serve existing files/folders directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback: route all other requests to React entrypoint.
+RewriteRule ^ index.html [L]

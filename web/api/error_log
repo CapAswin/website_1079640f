@@ -1,0 +1,36 @@
+[03-Apr-2026 06:56:06 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1 in /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php:13
+Stack trace:
+#0 /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php(13): PDO->prepare('SHOW TABLES LIK...')
+#1 /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php(36): table_exists(Object(PDO), 'brand_size')
+#2 {main}
+  thrown in /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php on line 13
+[03-Apr-2026 06:56:07 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1 in /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php:9
+Stack trace:
+#0 /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php(9): PDO->prepare('SHOW TABLES LIK...')
+#1 /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php(31): table_exists(Object(PDO), 'brand_type')
+#2 {main}
+  thrown in /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php on line 9
+[03-Apr-2026 06:56:08 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1 in /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php:13
+Stack trace:
+#0 /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php(13): PDO->prepare('SHOW TABLES LIK...')
+#1 /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php(36): table_exists(Object(PDO), 'brand_size')
+#2 {main}
+  thrown in /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php on line 13
+[03-Apr-2026 06:56:08 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1 in /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php:9
+Stack trace:
+#0 /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php(9): PDO->prepare('SHOW TABLES LIK...')
+#1 /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php(31): table_exists(Object(PDO), 'brand_type')
+#2 {main}
+  thrown in /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php on line 9
+[03-Apr-2026 06:56:14 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1 in /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php:13
+Stack trace:
+#0 /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php(13): PDO->prepare('SHOW TABLES LIK...')
+#1 /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php(36): table_exists(Object(PDO), 'brand_size')
+#2 {main}
+  thrown in /home1/nelitamy/public_html/website_1079640f/web/api/brand-size.php on line 13
+[03-Apr-2026 06:56:14 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1 in /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php:9
+Stack trace:
+#0 /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php(9): PDO->prepare('SHOW TABLES LIK...')
+#1 /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php(31): table_exists(Object(PDO), 'brand_type')
+#2 {main}
+  thrown in /home1/nelitamy/public_html/website_1079640f/web/api/brand-type.php on line 9

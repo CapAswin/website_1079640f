@@ -1,0 +1,462 @@
+{
+  "info": {
+    "_postman_id": "8a1428ed-499a-4133-aa40-828c606b392e",
+    "name": "OPULENT-WEB-APIS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52896316",
+    "_collection_link": "https://go.postman.co/collection/52896316-8a1428ed-499a-4133-aa40-828c606b392e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Influencer",
+      "item": [
+        {
+          "name": "tell-us",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_type\": 1,\n    \"user_id\": 3,\n    \"full_name\": \"John Doe\",\n    \"country_id\": 1,\n    \"province_id\": 5,\n    \"city_name\": \"Dubai\",\n    \"date_of_birth\": \"1990-01-01\",\n    \"gender\": 0,\n    \"influencer_type\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://www.opulentprimeproperties.com/influencer_house/web/influencers/tell-us",
+              "protocol": "https",
+              "host": [
+                "www",
+                "opulentprimeproperties",
+                "com"
+              ],
+              "path": [
+                "influencer_house",
+                "web",
+                "influencers",
+                "tell-us"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "brand",
+      "item": [
+        {
+          "name": "brand-size",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"industry_id\": 1\n}"
+            },
+            "url": {
+              "raw": "https://www.opulentprimeproperties.com/influencer_house/web/niche",
+              "protocol": "https",
+              "host": [
+                "www",
+                "opulentprimeproperties",
+                "com"
+              ],
+              "path": [
+                "influencer_house",
+                "web",
+                "niche"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "brand-type",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"industry_id\": 1\n}"
+            },
+            "url": {
+              "raw": "https://www.opulentprimeproperties.com/influencer_house/web/brand/brand-type",
+              "protocol": "https",
+              "host": [
+                "www",
+                "opulentprimeproperties",
+                "com"
+              ],
+              "path": [
+                "influencer_house",
+                "web",
+                "brand",
+                "brand-type"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://www.opulentprimeproperties.com/influencer_house/web/brand/brand-type",
+              "protocol": "https",
+              "host": [
+                "www",
+                "opulentprimeproperties",
+                "com"
+              ],
+              "path": [
+                "influencer_house",
+                "web",
+                "brand",
+                "brand-type"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "final-register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://www.opulentprimeproperties.com/influencer_house/web/brand/final-register",
+              "protocol": "https",
+              "host": [
+                "www",
+                "opulentprimeproperties",
+                "com"
+              ],
+              "path": [
+                "influencer_house",
+                "web",
+                "brand",
+                "final-register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "subscription",
+      "item": [
+        {
+          "name": "subscription-plans",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"usertype\": 0\n}"
+            },
+            "url": {
+              "raw": "https://www.opulentprimeproperties.com/influencer_house/web/subscription-plans?=0",
+              "protocol": "https",
+              "host": [
+                "www",
+                "opulentprimeproperties",
+                "com"
+              ],
+              "path": [
+                "influencer_house",
+                "web",
+                "subscription-plans"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "country",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/country",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "country"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "province",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"country_id\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/province",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "province"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "industry",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/industry",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "industry"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"industry_id\": 1\n}"
+        },
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/category",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "category"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "niche",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"industry_id\": 1\n}"
+        },
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/niche",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "niche"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "user-document-type",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/user-document-type",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "user-document-type"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "brand-document-type",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/api/brand-document-type",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "api",
+            "brand-document-type"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"123@gmail.com\",\n  \"password\": \"123123123\",\n  \"user_type\": \"0\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/signup",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "email-verify",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_type\": 0,\n    \"id\": 28\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/email-verify",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "email-verify"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "phone-registration",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_type\": 0,\n    \"id\": 28,\n    \"phone\": \"971234567\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.opulentprimeproperties.com/influencer_house/web/email-verify",
+          "protocol": "https",
+          "host": [
+            "www",
+            "opulentprimeproperties",
+            "com"
+          ],
+          "path": [
+            "influencer_house",
+            "web",
+            "email-verify"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

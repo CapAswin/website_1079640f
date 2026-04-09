@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/favicon.png" type="icon">
+    <title>Blog | Opulent Influencer House</title>
+    <link rel="stylesheet" href="assets/font/flaticon_jio_-_influencer.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
+    <link rel="stylesheet" href="assets/vendor/plyr/plyr.css">
+    <link rel="stylesheet" href="assets/vendor/slim-select/slimselect.css">
+    <link rel="stylesheet" href="assets/vendor/no-ui-slider/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .blog-page-shell{background:#f6f2ea}
+        .blog-hero{padding:132px 0 28px}
+        .blog-main{padding:10px 0 80px}
+        .blog-shell-card,.blog-list-card,.blog-side-card,.blog-cta-card{background:#fff;border:1px solid rgba(17,24,39,.08);border-radius:20px;box-shadow:0 16px 40px rgba(15,23,42,.06)}
+        .blog-hero-box{padding:30px}
+        .blog-hero-grid,.blog-layout,.blog-list-grid,.blog-cta-wrap{display:grid;gap:24px}
+        .blog-hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);align-items:center}
+        .blog-layout{grid-template-columns:minmax(0,1fr) 320px;align-items:start}
+        .blog-list-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+        .blog-kicker,.blog-chip{display:inline-flex;align-items:center;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+        .blog-kicker{padding:8px 13px;color:#9a6a10;background:#f5e9ca;border:1px solid #ecd7a3;margin-bottom:14px}
+        .blog-chip{padding:8px 12px;background:#fff;border:1px solid rgba(17,24,39,.08);color:#2a3442}
+        .blog-chip.is-active{background:#1d2632;color:#fff;border-color:#1d2632}
+        .blog-chip-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+        .blog-hero h1{font-size:clamp(34px,4.4vw,54px);line-height:1.06;color:#101723;max-width:11ch;margin-bottom:14px}
+        .blog-hero-copy,.blog-side-card p,.blog-card-copy,.blog-footer-note{color:#667085;line-height:1.75}
+        .blog-hero-copy{max-width:620px;font-size:16px;margin-bottom:20px}
+        .blog-hero-actions,.blog-cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+        .blog-hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+        .blog-stat{padding:16px;border-radius:16px;background:#faf7f2;border:1px solid rgba(17,24,39,.06)}
+        .blog-stat strong{display:block;font-size:24px;color:#101723;margin-bottom:4px}
+        .blog-stat span{display:block;color:#667085;font-size:13px;line-height:1.55}
+        .blog-hero-panel{padding:20px;border-radius:18px;background:#faf7f2;border:1px solid rgba(17,24,39,.06)}
+        .blog-hero-panel img,.blog-list-media img{width:100%;display:block;object-fit:cover;border-radius:16px}
+        .blog-hero-panel img{aspect-ratio:1/1;margin-bottom:14px}
+        .blog-feature-card{padding:0;overflow:hidden;margin-bottom:24px}
+        .blog-feature-grid{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(0,1.1fr)}
+        .blog-feature-media img{width:100%;height:100%;min-height:300px;object-fit:cover}
+        .blog-feature-copy{padding:26px}
+        .blog-feature-copy h2{font-size:34px;line-height:1.15;color:#101723;margin-bottom:14px}
+        .blog-meta,.blog-story-topline{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:#7b8492}
+        .blog-story-topline{justify-content:space-between}
+        .blog-list-card{overflow:hidden}
+        .blog-list-media img{aspect-ratio:16/10}
+        .blog-list-body{padding:20px}
+        .blog-story-category{color:#9a6a10;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+        .blog-list-card h3{font-size:22px;line-height:1.3;color:#101723;margin:12px 0 10px}
+        .blog-card-copy{margin-bottom:12px}
+        .blog-story-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:#16202d}
+        .blog-side-stack{display:grid;gap:18px}
+        .blog-side-card{padding:22px}
+        .blog-search{display:flex;align-items:center;gap:10px;padding:13px 14px;border-radius:14px;background:#faf7f2;border:1px solid rgba(17,24,39,.06)}
+        .blog-search input{width:100%;background:transparent;border:none;outline:none}
+        .blog-topic-list,.blog-mini-list{display:grid;gap:10px}
+        .blog-topic-item,.blog-mini-item{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(17,24,39,.08);color:#1d2939}
+        .blog-mini-item{display:grid;justify-content:initial;gap:4px}
+        .blog-topic-item:last-child,.blog-mini-item:last-child{border-bottom:none;padding-bottom:0}
+        .blog-mini-item strong{font-size:15px;line-height:1.5;color:#101723}
+        .blog-topic-item span:last-child,.blog-mini-item time{color:#7f8896}
+        .blog-cta{margin-top:28px}
+        .blog-cta-card{padding:28px;background:#1b2430;color:#fff}
+        .blog-cta-wrap{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+        .blog-cta-card p{color:rgba(226,232,240,.76);margin:10px 0 0;max-width:680px;line-height:1.75}
+        .blog-footer-contact a,.blog-footer-links a{display:block;color:rgba(255,255,255,.76);margin-bottom:10px}.blog-footer-links ul{list-style:none;margin:0;padding:0}.blog-footer-links li+li{margin-top:10px}
+        .blog-section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}
+        .blog-section-head p{margin:0;color:#667085;max-width:560px;line-height:1.75}
+        @media (max-width:1199px){.blog-hero-grid,.blog-layout,.blog-feature-grid{grid-template-columns:1fr}.blog-layout{gap:20px}}
+        @media (max-width:767px){.blog-hero{padding:114px 0 22px}.blog-hero-box,.blog-side-card,.blog-cta-card,.blog-list-body,.blog-feature-copy{padding:20px}.blog-list-grid,.blog-hero-stats{grid-template-columns:1fr}.blog-section-head{align-items:start;flex-direction:column}.blog-cta-wrap{grid-template-columns:1fr}}
+    </style>
+</head>
+<body class="blog-page-shell">
+    <div class="jo-sidebar">
+        <div>
+            <div class="jo-sidebar__heading d-flex justify-content-between align-items-center">
+                <a href="index.html"><img src="assets/img/favicon.png" alt="logo" class="logo"></a>
+                <button type="button" class="jo-sidebar-close-btn"><i class="flaticon-add-plus-button"></i></button>
+            </div>
+            <div class="jo-header-nav-in-mobile"></div>
+        </div>
+        <div>
+            <a href="signup.html" class="jo-btn"><i class="flaticon-add-plus-button"></i>Sign Up</a>
+            <div class="tt-footer-top__socials jo-footer-top__socials jo-sidebar-socials justify-content-start justify-content-sm-end">
+                <a href="https://www.facebook.com/profile.php?id=61585214585761" target="_blank" rel="noopener noreferrer"><i class="flaticon-facebook-1"></i></a>
+                <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-twitter"></i></a>
+                <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer"><i class="flaticon-social-media"></i></a>
+                <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-youtube-1"></i></a>
+            </div>
+        </div>
+    </div>
+    <header class="jo-header">
+        <div class="logo"><a href="index.html"><img src="assets/img/favicon.png" alt="logo"></a></div>
+        <div class="jo-header-right">
+            <div class="jo-header-nav">
+                <div class="to-go-to-sidebar-in-mobile">
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="for-brands.html">For Brands</a>
+                        <a href="for-influencers.html">For Influencers</a>
+                        <a href="service.html">Services</a>
+                        <a href="blog.html">Blogs</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="signup.html" class="jo-btn"><i class="flaticon-add-plus-button"></i>Sign Up</a>
+                <button class="jo-header-sidebar-open-btn jo-btn px-3 d-inline-block d-lg-none"><i class="flaticon-menu"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <div class="blog-shell-card blog-hero-box">
+                    <div class="blog-hero-grid">
+                        <div>
+                            <span class="blog-kicker">Opulent Editorial Desk</span>
+                            <h1>Stories that help brands and creators move with more precision.</h1>
+                            <p class="blog-hero-copy">Explore campaign strategy, creator growth, platform trends, verification insights, and practical playbooks built for the modern influencer economy.</p>
+                            <div class="blog-hero-actions">
+                                <a href="#latest-stories" class="jo-btn">Read Latest Stories</a>
+                                <a href="contact.html" class="jo-btn alt">Pitch a Collaboration</a>
+                            </div>
+                            <div class="blog-hero-stats">
+                                <div class="blog-stat"><strong>24+</strong><span>Published insights for brands and creators.</span></div>
+                                <div class="blog-stat"><strong>8</strong><span>Core topics across growth, trust, and execution.</span></div>
+                                <div class="blog-stat"><strong>Weekly</strong><span>Fresh notes from the Opulent editorial team.</span></div>
+                            </div>
+                        </div>
+                        <aside class="blog-hero-panel">
+                            <img src="assets/img/jo-article-1.jpg" alt="Featured editorial insight">
+                            <span class="blog-kicker" style="margin-bottom:12px;background:rgba(131,208,255,.14);border-color:rgba(131,208,255,.18);color:#d9f3ff;">Featured Insight</span>
+                            <h2 style="color:#fff;font-size:22px;margin-bottom:10px;">How verified creators help premium brands launch safer and faster campaigns.</h2>
+                            <p style="color:rgba(221,229,240,.76);line-height:1.75;margin-bottom:18px;">A practical breakdown of why stronger profiles, real audience signals, and clear collaboration workflows reduce friction before launch.</p>
+                            <div class="blog-meta">
+                                <span><i class="flaticon-calendar-1"></i> March 28, 2026</span>
+                                <span><i class="flaticon-user"></i> Opulent Editorial Team</span>
+                                <span><i class="flaticon-open-book"></i> 6 min read</span>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blog-main" id="latest-stories">
+            <div class="container">
+                <div class="blog-section-head">
+                    <div>
+                        <span class="blog-kicker" style="margin-bottom:10px;color:#b8821b;background:rgba(212,169,95,.14);border-color:rgba(212,169,95,.16);">Latest Stories</span>
+                        <h2 class="jo-section-title">Opulent Journal</h2>
+                    </div>
+                    <p>The page is structured like a real editorial hub: one major feature, a scannable article grid, and a side rail that helps visitors find relevant reading quickly.</p>
+                </div>
+                <div class="blog-chip-row">
+                    <span class="blog-chip is-active">All Posts</span>
+                    <span class="blog-chip">Brands</span>
+                    <span class="blog-chip">Creators</span>
+                    <span class="blog-chip">Verification</span>
+                </div>
+                <div class="blog-layout">
+                    <div>
+                        <article class="blog-shell-card blog-feature-card">
+                            <div class="blog-feature-grid">
+                                <div class="blog-feature-media"><img src="assets/img/blog-1.jpg" alt="Campaign planning session"></div>
+                                <div class="blog-feature-copy">
+                                    <span class="blog-kicker">Editor's Pick</span>
+                                    <h2>5 things every brand should prepare before posting a creator campaign.</h2>
+                                    <p>From budget clarity and content direction to audience targeting and review timelines, the quality of your campaign brief directly shapes the speed and quality of creator responses.</p>
+                                    <div class="blog-meta" style="margin-bottom:24px;">
+                                        <span><i class="flaticon-calendar-1"></i> March 30, 2026</span>
+                                        <span><i class="flaticon-user"></i> Brand Strategy Desk</span>
+                                        <span><i class="flaticon-open-book"></i> 8 min read</span>
+                                    </div>
+                                    <a href="blog-details.html" class="jo-btn">Read Article</a>
+                                </div>
+                            </div>
+                        </article>
+                        <div class="blog-list-grid">
+                            <article class="blog-list-card">
+                                <div class="blog-list-media"><img src="assets/img/blog-2.jpg" alt="Creator profile review"></div>
+                                <div class="blog-list-body">
+                                    <div class="blog-story-topline"><span class="blog-story-category">Creator Growth</span><span>March 26, 2026</span></div>
+                                    <h3>What makes a creator profile stand out in a competitive marketplace.</h3>
+                                    <p class="blog-card-copy">Better bios, sharper audience proof, and clearer niche positioning can lift conversion from profile view to campaign shortlist.</p>
+                                    <a class="blog-story-link" href="blog-details.html">Read More <i class="flaticon-arrow-right-1"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-list-card">
+                                <div class="blog-list-media"><img src="assets/img/blog-3.jpg" alt="Brand safety review"></div>
+                                <div class="blog-list-body">
+                                    <div class="blog-story-topline"><span class="blog-story-category">Verification</span><span>March 24, 2026</span></div>
+                                    <h3>Why trust layers matter when brands choose creators at scale.</h3>
+                                    <p class="blog-card-copy">Verification is more than a badge. It helps teams move from manual guesswork into repeatable, lower-risk campaign execution.</p>
+                                    <a class="blog-story-link" href="blog-details.html">Read More <i class="flaticon-arrow-right-1"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-list-card">
+                                <div class="blog-list-media"><img src="assets/img/blog-4.jpg" alt="Influencer reporting dashboard"></div>
+                                <div class="blog-list-body">
+                                    <div class="blog-story-topline"><span class="blog-story-category">Analytics</span><span>March 21, 2026</span></div>
+                                    <h3>How performance reporting changes the brand-creator relationship after launch.</h3>
+                                    <p class="blog-card-copy">Strong campaign analytics help both sides learn faster, renew smarter, and focus future spend on what actually worked.</p>
+                                    <a class="blog-story-link" href="blog-details.html">Read More <i class="flaticon-arrow-right-1"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-list-card">
+                                <div class="blog-list-media"><img src="assets/img/jo-article-2.jpg" alt="Campaign collaboration workflow"></div>
+                                <div class="blog-list-body">
+                                    <div class="blog-story-topline"><span class="blog-story-category">Operations</span><span>March 19, 2026</span></div>
+                                    <h3>How to reduce approval delays in creator campaigns without losing control.</h3>
+                                    <p class="blog-card-copy">Simple workflow design, better file requests, and tighter feedback loops can save days during active campaign cycles.</p>
+                                    <a class="blog-story-link" href="blog-details.html">Read More <i class="flaticon-arrow-right-1"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-list-card">
+                                <div class="blog-list-media"><img src="assets/img/jo-article-3.jpg" alt="Influencer platform growth"></div>
+                                <div class="blog-list-body">
+                                    <div class="blog-story-topline"><span class="blog-story-category">Platform News</span><span>March 16, 2026</span></div>
+                                    <h3>What product-led creator infrastructure means for the next phase of influence.</h3>
+                                    <p class="blog-card-copy">Platforms that combine discovery, onboarding, verification, and pricing remove friction on both the talent and brand side.</p>
+                                    <a class="blog-story-link" href="blog-details.html">Read More <i class="flaticon-arrow-right-1"></i></a>
+                                </div>
+                            </article>
+                            <article class="blog-list-card">
+                                <div class="blog-list-media"><img src="assets/img/jo-article-1.jpg" alt="Brand and creator collaboration"></div>
+                                <div class="blog-list-body">
+                                    <div class="blog-story-topline"><span class="blog-story-category">Brand Strategy</span><span>March 14, 2026</span></div>
+                                    <h3>How premium brands can brief creators without sounding overly corporate.</h3>
+                                    <p class="blog-card-copy">Clear communication can stay structured without killing creative momentum. The best briefs balance outcomes with room to interpret.</p>
+                                    <a class="blog-story-link" href="blog-details.html">Read More <i class="flaticon-arrow-right-1"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <aside class="blog-side-stack">
+                        <div class="blog-side-card">
+                            <h3>Search the Journal</h3>
+                            <div class="blog-search"><i class="flaticon-search"></i><input type="search" placeholder="Search campaign, creator, brand..."></div>
+                        </div>
+                        <div class="blog-side-card">
+                            <h3>Top Topics</h3>
+                            <div class="blog-topic-list">
+                                <a class="blog-topic-item" href="blog.html"><span>Brand Campaign Setup</span><span>08</span></a>
+                                <a class="blog-topic-item" href="blog.html"><span>Creator Verification</span><span>11</span></a>
+                                <a class="blog-topic-item" href="blog.html"><span>Audience Insights</span><span>07</span></a>
+                                <a class="blog-topic-item" href="blog.html"><span>Platform Growth</span><span>05</span></a>
+                                <a class="blog-topic-item" href="blog.html"><span>Pricing & Offers</span><span>06</span></a>
+                            </div>
+                        </div>
+                        <div class="blog-side-card">
+                            <h3>Popular Reads</h3>
+                            <div class="blog-mini-list">
+                                <a class="blog-mini-item" href="blog-details.html"><strong>How verified creators help brands launch safer, faster campaigns.</strong><time datetime="2026-03-28">March 28, 2026</time></a>
+                                <a class="blog-mini-item" href="blog-details.html"><strong>What makes a creator profile stand out in a competitive marketplace.</strong><time datetime="2026-03-26">March 26, 2026</time></a>
+                                <a class="blog-mini-item" href="blog-details.html"><strong>How to reduce approval delays in creator campaigns without losing control.</strong><time datetime="2026-03-19">March 19, 2026</time></a>
+                            </div>
+                        </div>
+                        <div class="blog-side-card">
+                            <h3>Get Weekly Insights</h3>
+                            <p>Receive editorial notes on creator economy trends, campaign planning, and platform updates directly from the Opulent team.</p>
+                            <a href="contact.html" class="jo-btn">Join the Newsletter</a>
+                        </div>
+                    </aside>
+                </div>
+                <div class="blog-cta">
+                    <div class="blog-cta-card">
+                        <div class="blog-cta-wrap">
+                            <div>
+                                <span class="blog-kicker">Need Campaign Support?</span>
+                                <h3 style="color:#fff;margin:0;">Turn insight into action with Opulent's creator infrastructure.</h3>
+                                <p>Whether you are building your creator profile or preparing a brand campaign, our platform helps you move from setup to activation with more confidence.</p>
+                            </div>
+                            <div class="blog-cta-actions">
+                                <a href="signup.html" class="jo-btn">Start Onboarding</a>
+                                <a href="service.html" class="jo-btn alt">Explore Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="jo-footer">
+        <div class="jo-container">
+            <div class="jo-footer-top">
+                <div class="row gx-4 gy-sm-5 gy-4 align-items-center">
+                    <div class="col-lg-3 col-6 col-xxs-12"><a href="index.html"><img src="assets/img/logo-white.svg" alt="logo" class="logo"></a></div>
+                    <div class="col-lg-6 order-lg-1 order-2">
+                        <form action="#" class="jo-footer-top__nwsltr">
+                            <input type="email" name="jo-nwsltr-email" id="jo-nwsltr-email" placeholder="Email Address">
+                            <button class="jo-btn" type="submit">Get Newsletter</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-6 col-xxs-12 order-lg-2 order-1">
+                        <div class="tt-footer-top__socials jo-footer-top__socials justify-content-start justify-content-sm-end">
+                            <a href="https://www.facebook.com/profile.php?id=61585214585761" target="_blank" rel="noopener noreferrer"><i class="flaticon-facebook-1"></i></a>
+                            <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-twitter"></i></a>
+                            <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer"><i class="flaticon-social-media"></i></a>
+                            <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-youtube-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="jo-footer-middle">
+                <div class="row g-4">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="jo-footer-widget blog-footer-contact">
+                            <h5 class="jo-footer-widget__title">Get in Touch</h5>
+                            <a href="mailto:hello@opulentinfluencershouse.com">hello@opulentinfluencershouse.com</a>
+                            <a href="contact.html">Contact the team</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="jo-footer-widget blog-footer-links">
+                            <h5 class="jo-footer-widget__title">Explore</h5>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="for-brands.html">For Brands</a></li>
+                                <li><a href="for-influencers.html">For Influencers</a></li>
+                                <li><a href="service.html">Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-12">
+                        <div class="jo-footer-widget">
+                            <h5 class="jo-footer-widget__title">About This Blog</h5>
+                            <p class="blog-footer-note">The Opulent Journal shares creator economy insights, platform updates, campaign planning advice, and guidance for both brands and influencers using our ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tt-footer-bottom text-center"><p class="mb-0">Copyright (c)2026 Opulent Influencer House. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/vendor/slim-select/slimselect.min.js"></script>
+    <script src="assets/vendor/plyr/plyr.polyfilled.js"></script>
+    <script src="assets/vendor/no-ui-slider/nouislider.min.js"></script>
+    <script src="assets/vendor/fs-lightbox/fslightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/accordion.js"></script>
+</body>
+</html>

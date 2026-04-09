@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/img/fav.png" type="icon">
+<title>Brand Signup | Opulent Influencer House</title>
+<link rel="stylesheet" href="assets/font/flaticon_jio_-_influencer.css">
+<link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
+<link rel="stylesheet" href="assets/vendor/plyr/plyr.css">
+<link rel="stylesheet" href="assets/vendor/slim-select/slimselect.css">
+<link rel="stylesheet" href="assets/vendor/no-ui-slider/nouislider.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css ">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.signup-page{
+  background:
+    radial-gradient(circle at top left, rgba(212,169,95,.18), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(110,135,170,.14), transparent 28%),
+    linear-gradient(180deg, #f7f2e9 0%, #f5f7fb 46%, #ffffff 100%);
+}
+.signup-wrap{padding:140px 0 100px;}
+.signup-card{position:relative;background:linear-gradient(180deg, rgba(20,26,36,.97) 0%, rgba(10,14,20,.99) 100%);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:40px;box-shadow:0 30px 90px rgba(15,23,42,.20);overflow:hidden;}
+.signup-card::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg, rgba(212,169,95,0) 0%, rgba(212,169,95,.95) 50%, rgba(212,169,95,0) 100%);}
+.signup-role-switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:24px;}
+.signup-role{position:relative;display:block;cursor:pointer;}
+.signup-role input{position:absolute;opacity:0;pointer-events:none;}
+.signup-role-card{display:flex;flex-direction:column;justify-content:center;height:100%;padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;}
+.signup-role-card strong{display:block;margin-bottom:8px;font-size:24px;color:#fff;}
+.signup-role-card span{display:block;color:#aeb8c7;line-height:1.7;}
+.signup-role input:checked + .signup-role-card{border-color:rgba(212,169,95,.50);box-shadow:0 18px 42px rgba(212,169,95,.12);transform:translateY(-2px);background:linear-gradient(180deg, rgba(212,169,95,.14), rgba(255,255,255,.03));}
+.signup-badge,.chip,.plan-card__tier{letter-spacing:.14em;text-transform:uppercase;font-weight:700;}
+.signup-badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:4px;background:rgba(212,169,95,.10);border:1px solid rgba(212,169,95,.22);color:#e9ca8c;font-size:11px;}
+.signup-muted{color:#aeb8c7;line-height:1.8;}
+.signup-note-box,.progress-wrap,.field,.upload,.plan-field,.welcome-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);}
+.signup-note-box{padding:24px;border-radius:12px;}
+.signup-note-box h3{margin-bottom:10px;color:#fff;}
+.progress-wrap{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;margin-bottom:24px;padding:18px 20px;border-radius:12px;}
+.track{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;}
+.track span{display:block;height:100%;width:0;background:linear-gradient(90deg, #d4a95f 0%, #f0d39d 45%, #83d0ff 100%);transition:width .3s ease;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{padding:8px 12px;border-radius:999px;font-size:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#97a5b8;}
+.chip.active{background:rgba(212,169,95,.14);color:#fff;border-color:rgba(212,169,95,.28);}
+.chip.done{background:rgba(131,208,255,.14);color:#e7f8ff;border-color:rgba(131,208,255,.18);}
+.step{display:none;}
+.step.active{display:block;}
+.step h2{margin-bottom:8px;color:#fff;}
+.grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:16px;}
+.field,.upload,.plan-field{padding:18px;border-radius:12px;}
+.full{grid-column:1 / -1;}
+.field label,.upload label,.plan-field > label{display:block;margin-bottom:10px;color:#fff;font-weight:600;}
+.field input,.field select,.field textarea{width:100%;min-height:56px;padding:15px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(8,12,18,.78);color:#fff;outline:none;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(212,169,95,.50);box-shadow:0 0 0 4px rgba(212,169,95,.10);}
+.field textarea{min-height:130px;resize:vertical;}
+.field select option{color:#111;}
+.plan-copy{margin:0 0 16px;color:#aeb8c7;}
+.plan-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:16px;}
+.plan-card{position:relative;padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));cursor:pointer;transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease;}
+.plan-card:hover{transform:translateY(-2px);border-color:rgba(212,169,95,.36);}
+.plan-card.is-selected{border-color:#d4a95f;box-shadow:0 18px 45px rgba(212,169,95,.12);}
+.plan-card input{position:absolute;opacity:0;pointer-events:none;}
+.plan-card__tier{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(212,169,95,.14);border:1px solid rgba(212,169,95,.22);font-size:10px;color:#f1d8a7;}
+.plan-card__name{margin:16px 0 6px;font-size:24px;color:#fff;}
+.plan-card__price{margin:0 0 14px;font-size:28px;font-weight:700;color:#fff;}
+.plan-card__price span{font-size:14px;font-weight:500;color:#aeb8c7;}
+.plan-card ul{margin:0;padding-left:18px;color:#dbe4f2;}
+.plan-card li + li{margin-top:8px;}
+.plan-empty{padding:18px;border-radius:10px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.14);color:#aeb8c7;}
+.upload-box{display:flex;align-items:center;justify-content:center;min-height:120px;padding:16px;border:1px dashed rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.02);cursor:pointer;text-align:center;}
+.upload-box input{display:none;}
+.file-name{display:block;margin-top:10px;color:#aeb8c7;font-size:14px;}
+.otp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.actions .group{display:flex;gap:12px;flex-wrap:wrap;}
+.jo-btn.alt{background:transparent;border:1px solid rgba(255,255,255,.14);color:#fff;}
+.jo-btn.alt:hover{background:rgba(255,255,255,.06);}
+.status{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;}
+.status.show{display:block;}
+.status.ok{background:rgba(39,130,83,.18);border:1px solid rgba(141,228,174,.20);color:#8de4ae;}
+.status.bad{background:rgba(142,31,31,.22);border:1px solid rgba(255,171,171,.18);color:#ffabab;}
+.welcome{display:none;}
+.welcome.active{display:block;}
+.signup-pane{display:none;}
+.signup-pane.active{display:block;}
+.welcome-box{padding:30px;border-radius:12px;}
+.welcome-box h2{margin-bottom:12px;font-size:42px;color:#fff;}
+.stores{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;}
+.stores img{height:52px;}
+@media (max-width: 991px){.signup-wrap{padding:130px 0 90px}.signup-role-switch,.otp-grid,.progress-wrap,.grid,.plan-grid{grid-template-columns:1fr}}
+@media (max-width: 767px){.signup-wrap{padding:118px 0 72px}.signup-card{padding:24px 18px}.signup-role-card,.field,.upload,.plan-field,.welcome-box,.signup-note-box{padding:18px}.progress-wrap{gap:14px;padding:16px}.chips{gap:6px}.chip{font-size:9px;padding:7px 10px}.plan-card{padding:18px}.plan-card__name,.signup-role-card strong{font-size:20px}.plan-card__price{font-size:24px}.welcome-box h2{font-size:32px}.actions{flex-direction:column}.actions .group,.actions .jo-btn{width:100%}}
+@media (max-width: 575px){.signup-wrap{padding:104px 0 60px}.signup-card{padding:18px 14px;border-radius:12px}.signup-role-switch{gap:10px}.signup-role-card span,.signup-muted,.plan-copy{line-height:1.6}.field input,.field select,.field textarea{min-height:52px;padding:13px 14px}.upload-box{min-height:100px;padding:14px}.stores img{height:44px}}
+</style>
+</head>
+<body class="signup-page">
+<div class="jo-sidebar">
+  <div>
+    <div class="jo-sidebar__heading d-flex justify-content-between align-items-center">
+      <a href="index.html"><img src="assets/img/favicon.png" alt="logo" class="logo"></a>
+      <button type="button" class="jo-sidebar-close-btn"><i class="flaticon-add-plus-button"></i></button>
+    </div>
+    <div class="jo-header-nav-in-mobile"></div>
+  </div>
+  <div>
+    <a href="signup.html" class="jo-btn"><i class="flaticon-add-plus-button"></i>Sign Up</a>
+    <div class="tt-footer-top__socials jo-footer-top__socials jo-sidebar-socials justify-content-start justify-content-sm-end">
+      <a href="https://www.facebook.com/profile.php?id=61585214585761" target="_blank" rel="noopener noreferrer"><i class="flaticon-facebook-1"></i></a>
+      <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-twitter"></i></a>
+      <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer"><i class="flaticon-social-media"></i></a>
+      <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-youtube-1"></i></a>
+    </div>
+  </div>
+</div>
+<header class="jo-header">
+  <div class="logo"><a href="index.html"><img src="assets/img/favicon.png" alt="logo"></a></div>
+  <div class="jo-header-right">
+    <div class="jo-header-nav"><div class="to-go-to-sidebar-in-mobile"><nav><a href="index.html">Home</a><a href="about.html">About Us</a><a href="for-brands.html">For Brands</a><a href="for-influencers.html">For Influencers</a><a href="service.html">Services</a><a href="blog.html">Blogs</a><a href="contact.html">Contact</a></nav></div></div>
+    <div class="d-flex gap-2"><a href="signup.html" class="jo-btn"><i class="flaticon-add-plus-button"></i>Sign Up</a><button class="jo-header-sidebar-open-btn jo-btn px-3 d-inline-block d-lg-none"><i class="flaticon-menu"></i></button></div>
+  </div>
+</header>
+<main>
+  <section class="signup-wrap">
+    <div class="container">
+      <div class="signup-card">
+        <div class="signup-role-switch">
+          <label class="signup-role">
+            <input type="radio" name="signup_mode" value="brand" checked>
+            <span class="signup-role-card">
+              <strong>Brand</strong>
+              <span>Campaign setup, company details, documents, and subscription flow.</span>
+            </span>
+          </label>
+          <label class="signup-role">
+            <input type="radio" name="signup_mode" value="influencer">
+            <span class="signup-role-card">
+              <strong>Influencer</strong>
+              <span>Creator profile, niche, social accounts, audience data, and pricing flow.</span>
+            </span>
+          </label>
+        </div>
+        <div id="brand-wizard" class="signup-pane active">
+          <div class="progress-wrap">
+            <div>
+              <div class="track"><span id="progress-bar"></span></div>
+              <div class="signup-muted" id="step-copy">Step 1 of 5: create your account.</div>
+            </div>
+            <div class="chips">
+              <span class="chip active">Account</span>
+              <span class="chip">Email</span>
+              <span class="chip">Phone</span>
+              <span class="chip">Company</span>
+              <span class="chip">Owner</span>
+            </div>
+          </div>
+          <form id="brand-form" novalidate>
+            <section class="step active" data-step="1">
+              <h2>Create your brand account</h2>
+              <p class="signup-muted">Start with the email or username details for the brand portal.</p>
+              <div class="grid">
+                <div class="field"><label for="brand_email">Brand email</label><input id="brand_email" name="brand_email" type="email" required placeholder="team@brand.com"></div>
+                <div class="field"><label for="brand_username">Username</label><input id="brand_username" name="brand_username" type="text" placeholder="brandportal"></div>
+                <div class="field"><label for="brand_password">Password</label><input id="brand_password" name="brand_password" type="password" required placeholder="Minimum 8 characters"></div>
+                <div class="field"><label for="brand_password_confirm">Confirm password</label><input id="brand_password_confirm" name="brand_password_confirm" type="password" required placeholder="Repeat password"></div>
+              </div>
+            </section>
+            <section class="step" data-step="2">
+              <h2>Email confirmation</h2>
+              <p class="signup-muted" id="email-copy">Email confirmation is temporarily bypassed for now. Continue to the next step.</p>
+              <div class="otp-grid">
+                <div class="field"><label for="email_otp">Email OTP</label><input id="email_otp" name="email_otp" type="text" maxlength="6" placeholder="Temporarily not required" disabled></div>
+                <div class="field"><label>&nbsp;</label><button type="button" class="jo-btn" id="send-email-otp" disabled>Email OTP Bypassed</button><button type="button" class="jo-btn alt" id="resend-email-otp" style="margin-top:12px;" disabled>Resend unavailable</button></div>
+              </div>
+            </section>
+            <section class="step" data-step="3">
+              <h2>Phone confirmation</h2>
+              <p class="signup-muted">Phone confirmation is temporarily bypassed for now. Add the phone number and continue.</p>
+              <div class="otp-grid">
+                <div class="field"><label for="owner_phone">Phone number</label><input id="owner_phone" name="owner_phone" type="tel" required placeholder="+971 55 000 0000"></div>
+                <div class="field"><label for="phone_otp">Phone OTP</label><input id="phone_otp" name="phone_otp" type="text" maxlength="6" placeholder="Temporarily not required" disabled></div>
+                <div class="field"><label>&nbsp;</label><button type="button" class="jo-btn" id="send-phone-otp" disabled>Phone OTP Bypassed</button><button type="button" class="jo-btn alt" id="resend-phone-otp" style="margin-top:12px;" disabled>Resend unavailable</button></div>
+              </div>
+            </section>
+            <section class="step" data-step="4">
+              <h2>Tell us about your company</h2>
+              <p class="signup-muted">Company, brand, location and online presence.</p>
+              <div class="grid">
+                <div class="upload"><label for="company_logo">Upload company logo</label><label class="upload-box" for="company_logo">Select company logo<input id="company_logo" name="company_logo" type="file" accept="image/*"></label><span class="file-name" id="company_logo_name">No file selected</span></div>
+                <div class="field"><label for="company_name">Company name</label><input id="company_name" name="company_name" type="text" required></div>
+                <div class="field"><label for="company_size_id">Company size</label><select id="company_size_id" name="company_size_id" required><option value="">Select company size</option></select></div>
+                <div class="field"><label for="company_type_id">Company type</label><select id="company_type_id" name="company_type_id" required><option value="">Select company type</option></select></div>
+                <div class="field"><label for="brand_name">Brand name</label><input id="brand_name" name="brand_name" type="text" required></div>
+                <div class="field"><label for="year_established">Year of establishment</label><input id="year_established" name="year_established" type="number" min="1900" max="2100" required></div>
+                <div class="field"><label for="brand_industry_id">Industry</label><select id="brand_industry_id" name="brand_industry_id" required><option value="">Select industry</option></select></div>
+                <div class="field"><label for="brand_category_id">Brand category</label><select id="brand_category_id" name="brand_category_id" required><option value="">Select category</option></select></div>
+                <div class="plan-field full"><label>Brand subscription plan</label><p class="plan-copy">Choose the paid brand plan that matches your company. Plans load from the same pricing API used on the homepage.</p><div class="plan-grid" id="brand-plan-grid"><div class="plan-empty">Loading brand plans...</div></div><input id="subscription_plan_id" name="subscription_plan_id" type="hidden"></div>
+                <div class="field"><label for="country_id">Country</label><select id="country_id" name="country_id" required><option value="">Select country</option></select></div>
+                <div class="field"><label for="province_id">Emirate</label><select id="province_id" name="province_id" required><option value="">Select emirate</option></select></div>
+                <div class="field"><label for="city_name">City</label><input id="city_name" name="city_name" type="text" required></div>
+                <div class="field"><label for="company_website">Company website</label><input id="company_website" name="company_website" type="url"></div>
+                <div class="field full"><label for="company_bio">Company bio</label><textarea id="company_bio" name="company_bio" required></textarea></div>
+                <div class="field full"><label for="company_address">Company address</label><textarea id="company_address" name="company_address" required></textarea></div>
+              </div>
+            </section>
+            <section class="step" data-step="5">
+              <h2>Owner contact details</h2>
+              <p class="signup-muted">Owner details, preferred communication and compliance documents.</p>
+              <div class="grid">
+                <div class="field"><label for="owner_name">Owner name</label><input id="owner_name" name="owner_name" type="text" required></div>
+                <div class="field"><label for="owner_phone_confirm">Owner phone</label><input id="owner_phone_confirm" name="owner_phone_confirm" type="tel" required></div>
+                <div class="field"><label for="owner_email">Owner email</label><input id="owner_email" name="owner_email" type="email" required></div>
+                <div class="field"><label for="preferred_communication">Preferred communication</label><select id="preferred_communication" name="preferred_communication" required><option value="">Select preference</option><option value="email">Email</option><option value="phone">Phone</option><option value="whatsapp">WhatsApp</option></select></div>
+                <div class="field"><label for="owner_document_type_id">Owner document type</label><select id="owner_document_type_id" name="owner_document_type_id" required><option value="">Select owner document type</option></select></div>
+                <div class="field"><label for="company_document_type_id">Company document type</label><select id="company_document_type_id" name="company_document_type_id" required><option value="">Select company document type</option></select></div>
+                <div class="upload"><label for="owner_document_upload">Owner document upload</label><label class="upload-box" for="owner_document_upload">Upload owner document<input id="owner_document_upload" name="owner_document_upload" type="file" accept=".pdf,.png,.jpg,.jpeg"></label><span class="file-name" id="owner_document_upload_name">No file selected</span></div>
+                <div class="upload"><label for="company_document_upload">Company document upload</label><label class="upload-box" for="company_document_upload">Upload company document<input id="company_document_upload" name="company_document_upload" type="file" accept=".pdf,.png,.jpg,.jpeg"></label><span class="file-name" id="company_document_upload_name">No file selected</span></div>
+              </div>
+            </section>
+            <div class="actions">
+              <div class="group"><button type="button" class="jo-btn alt" id="prev-btn" style="display:none;">Back</button></div>
+              <div class="group"><button type="button" class="jo-btn alt" id="save-btn">Save Progress</button><button type="button" class="jo-btn" id="next-btn">Continue</button><button type="submit" class="jo-btn" id="submit-btn" style="display:none;">Submit Information</button></div>
+            </div>
+            <div id="status" class="status"></div>
+          </form>
+          <section id="welcome" class="welcome">
+            <div class="welcome-box">
+              <span class="signup-badge">Welcome</span>
+              <h2>Your brand onboarding is complete.</h2>
+              <p class="signup-muted">Your information has been submitted. You can continue to the dashboard or download the app on iOS or Android.</p>
+              <div class="stores"><a href="#"><img src="assets/img/app-store-link.png" alt="App Store"></a><a href="#"><img src="assets/img/play-store-link.png" alt="Google Play"></a></div>
+              <div class="actions"><div class="group"><a href="dashboard-brand.html" class="jo-btn">Go to Dashboard</a><a href="contact.html" class="jo-btn alt">Contact Support</a></div></div>
+            </div>
+          </section>
+        </div>
+        <div id="influencer-wizard" class="signup-pane">
+          <div class="progress-wrap">
+            <div>
+              <div class="track"><span id="influencer-progress-bar"></span></div>
+              <div class="signup-muted" id="influencer-step-copy">Step 1 of 5: create your account.</div>
+            </div>
+            <div class="chips">
+              <span class="chip active">Account</span>
+              <span class="chip">Email</span>
+              <span class="chip">Phone</span>
+              <span class="chip">Profile</span>
+              <span class="chip">Creator</span>
+            </div>
+          </div>
+          <form id="influencer-signup-form" novalidate>
+            <section class="step active" data-step="1">
+              <h2>Create your influencer account</h2>
+              <p class="signup-muted">Start with the login details for your creator account.</p>
+              <div class="grid">
+                <div class="field"><label for="inf_email">Creator email</label><input id="inf_email" name="inf_email" type="email" required placeholder="creator@email.com"></div>
+                <div class="field"><label for="inf_username">Username</label><input id="inf_username" name="inf_username" type="text" placeholder="creatorhandle"></div>
+                <div class="field"><label for="inf_password">Password</label><input id="inf_password" name="inf_password" type="password" required placeholder="Minimum 8 characters"></div>
+                <div class="field"><label for="inf_password_confirm">Confirm password</label><input id="inf_password_confirm" name="inf_password_confirm" type="password" required placeholder="Repeat password"></div>
+              </div>
+            </section>
+            <section class="step" data-step="2">
+              <h2>Email confirmation</h2>
+              <p class="signup-muted" id="inf-email-copy">Email confirmation is temporarily bypassed for now. Continue to the next step.</p>
+              <div class="otp-grid">
+                <div class="field"><label for="inf_email_otp">Email OTP</label><input id="inf_email_otp" type="text" placeholder="Temporarily not required" disabled></div>
+                <div class="field"><label>&nbsp;</label><button type="button" class="jo-btn" disabled>Email OTP Bypassed</button><button type="button" class="jo-btn alt" style="margin-top:12px;" disabled>Resend unavailable</button></div>
+              </div>
+            </section>
+            <section class="step" data-step="3">
+              <h2>Phone confirmation</h2>
+              <p class="signup-muted">Phone confirmation is temporarily bypassed for now. Add the phone number and continue.</p>
+              <div class="otp-grid">
+                <div class="field"><label for="inf_phone">Phone number</label><input id="inf_phone" name="inf_phone" type="tel" required placeholder="+971 55 000 0000"></div>
+                <div class="field"><label for="inf_phone_otp">Phone OTP</label><input id="inf_phone_otp" type="text" placeholder="Temporarily not required" disabled></div>
+                <div class="field"><label>&nbsp;</label><button type="button" class="jo-btn" disabled>Phone OTP Bypassed</button><button type="button" class="jo-btn alt" style="margin-top:12px;" disabled>Resend unavailable</button></div>
+              </div>
+            </section>
+            <section class="step" data-step="4">
+              <h2>Build your creator profile</h2>
+              <p class="signup-muted">Basic profile, location, account type, and subscription plan.</p>
+              <div class="grid">
+                <div class="field"><label for="inf_full_name">Full name</label><input id="inf_full_name" type="text" required></div>
+                <div class="field"><label for="inf_date_of_birth">Date of birth</label><input id="inf_date_of_birth" type="date" required></div>
+                <div class="field"><label for="inf_country_id">Country</label><select id="inf_country_id" required><option value="">Select country</option></select></div>
+                <div class="field"><label for="inf_province_id">Emirate</label><select id="inf_province_id" required><option value="">Select emirate</option></select></div>
+                <div class="field"><label for="inf_city_name">City</label><input id="inf_city_name" type="text" required></div>
+                <div class="field"><label for="inf_gender">Gender</label><select id="inf_gender" required><option value="">Select gender</option><option value="0">Male</option><option value="1">Female</option><option value="2">Other</option></select></div>
+                <div class="field"><label for="inf_type">Influencer type</label><select id="inf_type" required><option value="">Select type</option><option value="0">Nano</option><option value="1">Macro</option><option value="2">Celebrity</option></select></div>
+                <div class="plan-field full"><label>Creator subscription plan</label><p class="plan-copy">Choose the creator plan that matches your profile and collaboration goals.</p><div class="plan-grid" id="influencer-plan-grid"><div class="plan-empty">Loading creator plans...</div></div><input id="inf_subscription_plan_id" type="hidden"></div>
+              </div>
+            </section>
+            <section class="step" data-step="5">
+              <h2>Creator details and pricing</h2>
+              <p class="signup-muted">Add your niche, social accounts, audience summary, pricing, and verification document.</p>
+              <div class="grid">
+                <div class="field full"><label for="inf_bio">Bio</label><textarea id="inf_bio" required></textarea></div>
+                <div class="field"><label for="inf_experience_since">Experience since</label><input id="inf_experience_since" type="number" min="2005" max="2100" required></div>
+                <div class="field"><label for="inf_industry_id">Industry</label><select id="inf_industry_id" required><option value="">Select industry</option></select></div>
+                <div class="field"><label for="inf_primary_category_id">Primary category</label><select id="inf_primary_category_id" required><option value="">Select category</option></select></div>
+                <div class="field"><label for="inf_primary_niche_id">Primary niche</label><select id="inf_primary_niche_id" required><option value="">Select niche</option></select></div>
+                <div class="field"><label for="inf_secondary_niche_id">Secondary niche</label><select id="inf_secondary_niche_id"><option value="">Select niche</option></select></div>
+                <div class="field"><label for="inf_past_brands">Past brands</label><input id="inf_past_brands" type="text" placeholder="Comma separated"></div>
+                <div class="field"><label for="inf_instagram">Instagram username</label><input id="inf_instagram" type="text"></div>
+                <div class="field"><label for="inf_tiktok">TikTok username</label><input id="inf_tiktok" type="text"></div>
+                <div class="field"><label for="inf_youtube">YouTube channel link</label><input id="inf_youtube" type="url"></div>
+                <div class="field"><label for="inf_price_per_post">Price per post</label><input id="inf_price_per_post" type="number" min="0" step="0.01"></div>
+                <div class="field"><label for="inf_collaboration_type">Collaboration type</label><select id="inf_collaboration_type" required><option value="paid">Paid</option><option value="affiliate">Affiliate</option><option value="barter">Barter</option></select></div>
+                <div class="field"><label for="inf_document_type">Document type</label><select id="inf_document_type"><option value="">Select document type</option></select></div>
+                <div class="field"><label for="inf_top_countries">Top audience countries</label><input id="inf_top_countries" type="text" placeholder="AE, SA, UK"></div>
+                <div class="field"><label for="inf_gender_split">Audience gender split</label><input id="inf_gender_split" type="text" placeholder='{"female":60,"male":40}'></div>
+                <div class="field"><label for="inf_age_groups">Audience age groups</label><input id="inf_age_groups" type="text" placeholder='{"18-24":45,"25-34":35}'></div>
+                <div class="upload full"><label for="inf_document_file">Verification document</label><label class="upload-box" for="inf_document_file">Upload document<input id="inf_document_file" type="file" accept=".pdf,.png,.jpg,.jpeg"></label><span class="file-name" id="inf_document_file_name">No file selected</span></div>
+              </div>
+            </section>
+            <div class="actions">
+              <div class="group"><button type="button" class="jo-btn alt" id="inf-prev-btn" style="display:none;">Back</button></div>
+              <div class="group"><button type="button" class="jo-btn alt" id="inf-save-btn">Save Progress</button><button type="button" class="jo-btn" id="inf-next-btn">Continue</button><button type="submit" class="jo-btn" id="inf-submit-btn" style="display:none;">Submit Information</button></div>
+            </div>
+            <div id="inf-status" class="status"></div>
+          </form>
+          <section id="inf-welcome" class="welcome">
+            <div class="welcome-box">
+              <span class="signup-badge">Welcome</span>
+              <h2>Your creator onboarding is complete.</h2>
+              <p class="signup-muted">Your profile has been submitted. We’ll review your details and activate your creator account after verification.</p>
+              <div class="actions"><div class="group"><a href="dashboard.html" class="jo-btn">Go to Dashboard</a><a href="contact.html" class="jo-btn alt">Contact Support</a></div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="jo-footer">
+  <div class="jo-container">
+    <div class="jo-footer-top">
+      <div class="row gx-4 gy-sm-5 gy-4 align-items-center">
+        <div class="col-lg-3 col-6 col-xxs-12"><a href="index.html"><img src="assets/img/logos.png" alt="logo" class="logo"></a></div>
+        <div class="col-lg-6 order-lg-1 order-2"><form action="#" class="jo-footer-top__nwsltr"><input type="email" name="jo-nwsltr-email" id="jo-nwsltr-email" placeholder="Email Address"><button class="jo-btn" type="submit">Get Newsletter</button></form></div>
+        <div class="col-lg-3 col-6 col-xxs-12 order-lg-2 order-1"><div class="tt-footer-top__socials jo-footer-top__socials justify-content-start justify-content-sm-end"><a href="https://www.facebook.com/profile.php?id=61585214585761" target="_blank" rel="noopener noreferrer"><i class="flaticon-facebook-1"></i></a><a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-twitter"></i></a><a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer"><i class="flaticon-social-media"></i></a><a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer"><i class="flaticon-youtube-1"></i></a></div></div>
+      </div>
+    </div>
+    <div class="jo-footer-middle">
+      <div class="row g-4">
+        <div class="col-xl-4 col-md-6"><div class="jo-footer-widget jo-footer-contact"><h5 class="jo-footer-widget__title">Get in Touch</h5><div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@ulegendarydigital.com">info@ulegendarydigital.com</a></div><div class="contact-item"><i class="fas fa-phone-alt"></i><a href="tel:971556173798">Call: +971 55 617 3798</a></div><div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Office # 803 - 8th Floor, White Swan Building, Trade Centre District, Sheikh Zayed Road, Dubai, United Arab Emirates.</span></div></div></div>
+        <div class="col-xl-4 col-md-6"><div class="jo-footer-widget jo-footer-links"><h5 class="jo-footer-widget__title">Browse</h5><ul><li><a href="about.html">About Us</a></li><li><a href="for-brands.html">For Brands</a></li><li><a href="for-influencers.html">For Influencers</a></li><li><a href="service.html">Services</a></li><li><a href="blog.html">Blogs</a></li><li><a href="contact.html">Contact</a></li></ul></div></div>
+        <div class="col-xl-4 col-md-12"><div class="jo-footer-widget"><h5 class="jo-footer-widget__title">Start Here</h5><p>The original brand onboarding workflow is active again on this page, with updated premium styling only.</p><div class="d-flex gap-2 flex-wrap"><a href="influencer-form.html" class="jo-btn">Influencer Form</a><a href="contact.html" class="jo-btn alt">Need Help?</a></div></div></div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/splide/splide.min.js"></script>
+<script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+<script src="assets/vendor/slim-select/slimselect.min.js"></script>
+<script src="assets/vendor/plyr/plyr.polyfilled.js"></script>
+<script src="assets/vendor/no-ui-slider/nouislider.min.js"></script>
+<script src="assets/vendor/fs-lightbox/fslightbox.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+const wizard=document.getElementById("brand-wizard"),form=document.getElementById("brand-form"),steps=[...wizard.querySelectorAll(".step")],chips=[...wizard.querySelectorAll(".chip")],progress=document.getElementById("progress-bar"),copy=document.getElementById("step-copy"),status=document.getElementById("status"),welcome=document.getElementById("welcome"),prevBtn=document.getElementById("prev-btn"),nextBtn=document.getElementById("next-btn"),submitBtn=document.getElementById("submit-btn"),saveBtn=document.getElementById("save-btn"),brandEmail=document.getElementById("brand_email"),ownerPhone=document.getElementById("owner_phone"),ownerPhoneConfirm=document.getElementById("owner_phone_confirm"),subscriptionPlanInput=document.getElementById("subscription_plan_id"),brandPlanGrid=document.getElementById("brand-plan-grid");if(!form)return;let current=1;const meta=["Step 1 of 5: create your account.","Step 2 of 5: email confirmation is bypassed for now.","Step 3 of 5: phone confirmation is bypassed for now.","Step 4 of 5: complete company details.","Step 5 of 5: add owner details and submit."],state={accountCreated:false,emailOtpSent:true,phoneOtpSent:true,emailVerified:true,phoneVerified:true,userId:null},restoredData={};
+function show(msg,ok){status.textContent=msg;status.className="status show "+(ok?"ok":"bad")}function clear(){status.className="status";status.textContent=""}function fileLabel(inputId,labelId){const i=document.getElementById(inputId),l=document.getElementById(labelId);if(!i||!l)return;i.addEventListener("change",()=>{l.textContent=i.files&&i.files[0]?i.files[0].name:"No file selected"})}function syncWizardState(){sessionStorage.setItem("brandEmailOtpSent",state.emailOtpSent?"1":"0");sessionStorage.setItem("brandPhoneOtpSent",state.phoneOtpSent?"1":"0");sessionStorage.setItem("brandEmailVerified",state.emailVerified?"1":"0");sessionStorage.setItem("brandPhoneVerified",state.phoneVerified?"1":"0");sessionStorage.setItem("brandSignupUserId",state.userId?String(state.userId):"")}function setStep(step){current=step;steps.forEach((s,i)=>s.classList.toggle("active",i+1===step));chips.forEach((c,i)=>{c.classList.toggle("active",i+1===step);c.classList.toggle("done",i+1<step)});progress.style.width=((step-1)/(steps.length-1))*100+"%";copy.textContent=meta[step-1];prevBtn.style.display=step===1?"none":"inline-flex";nextBtn.style.display=step===steps.length?"none":"inline-flex";submitBtn.style.display=step===steps.length?"inline-flex":"none";clear()}function required(step){return steps[step-1].querySelectorAll("[required]")}function valid(step){for(const f of required(step)){if(!String(f.value||"").trim()){f.reportValidity();return false}}if(step===1){const p=document.getElementById("brand_password").value,c=document.getElementById("brand_password_confirm").value;if(p.length<8){show("Password must be at least 8 characters long.",false);return false}if(p!==c){show("Passwords do not match.",false);return false}}if(step===4&&!String(subscriptionPlanInput.value||"").trim()){show("Select a brand subscription plan to continue.",false);return false}if(step===5&&ownerPhoneConfirm.value.trim()!==ownerPhone.value.trim()){show("Owner phone must match the phone number you entered earlier.",false);return false}clear();return true}
+const API_ROUTES=Object.freeze({"signup":"web/api/signup.php","email-verify":"web/api/email-verify.php","email-verify-confirm":"web/api/email-verify-confirm.php","phone-registration":"web/api/phone-registration.php","phone-verify-confirm":"web/api/phone-verify-confirm.php","subscription-plans":"web/api/subscription-plans.php","country":"web/api/country.php","province":"web/api/province.php","industry":"web/api/industry.php","category":"web/api/category.php","brand-size":"web/api/brand-size.php","brand-type":"web/api/brand-type.php","user-document-type":"web/api/user-document-type.php","brand-document-type":"web/api/brand-document-type.php","register":"web/api/brand/register.php","final-register":"web/api/brand/final-register.php","brand-upload-documents":"web/api/brand/upload-documents.php"}),LEGACY_PROXY_URL="signup-api.php";async function readJson(r){const t=await r.text();try{return t?JSON.parse(t):{}}catch(e){throw new Error("Unexpected response from "+r.url)}}async function parseResponse(r){const j=await readJson(r);if(!r.ok)throw new Error(j&&j.message||("Failed: "+r.url));if(j&&typeof j==="object"&&!Array.isArray(j)&&Object.prototype.hasOwnProperty.call(j,"success")&&!j.success)throw new Error(j.message||("Failed: "+r.url));return j}async function postApi(action,payload){return parseResponse(await fetch(API_ROUTES[action],{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload||{})}))}async function postApiRaw(action,payload){return readJson(await fetch(API_ROUTES[action],{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload||{})}))}async function postApiForm(action,formData){return parseResponse(await fetch(API_ROUTES[action],{method:"POST",body:formData,headers:{"Accept":"application/json"}}))}async function postLegacy(action,payload){return parseResponse(await fetch(LEGACY_PROXY_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({action:action,payload:payload||{}})}))}async function postLookup(action,payload){try{return await postApi(action,payload)}catch(err){if(action==="brand-size"||action==="brand-type"||action==="category"||action==="province")return postLegacy(action,payload);throw err}}function rows(x){if(Array.isArray(x))return x;const d=x&&x.data;return Array.isArray(d)?d:Array.isArray(d&&d.data)?d.data:Array.isArray(d&&d.result)?d.result:Array.isArray(d&&d.response)?d.response:Array.isArray(x&&x.result)?x.result:Array.isArray(x&&x.response)?x.response:[]}function fill(sel,list,vks,lks,ph){sel.innerHTML='<option value="">'+ph+"</option>";(list||[]).forEach((r,i)=>{const o=document.createElement("option"),vk=vks.find(k=>r[k]!=null),lk=lks.find(k=>r[k]!=null);o.value=vk?r[vk]:i+1;o.textContent=lk?r[lk]:"Option "+(i+1);sel.appendChild(o)})}
+function escapeHtml(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}function formatMoney(v){const n=Number(v);return n===n?"AED "+n.toLocaleString(undefined,{maximumFractionDigits:0}):"Custom"}function badgeForTier(tier){const map={free:"Self-Serve",pro:"Tools + Priority Access",elite:"Full Managed Service"};return map[String(tier||"").toLowerCase()]||String(tier||"Plan")}function planFeatures(plan){const out=[],features=plan.features_json||{};if(plan.campaign_slots_per_month!=null)out.push(plan.campaign_slots_per_month>=999?"Unlimited campaign slots":"Up to "+plan.campaign_slots_per_month+" campaign slots per month");if(plan.commission_pct!=null)out.push(plan.commission_pct+"% commission");const labels={campaign_posting:"Can post campaigns",limited_campaigns:"Limited campaigns",basic_support:"Standard support",priority_listing:"Priority listing",advanced_filters:"Advanced influencer filters",analytics:"Campaign analytics",unlimited_campaigns:"Unlimited campaigns",featured_placement:"Featured placement",priority_support:"Priority support",advanced_analytics:"Advanced analytics"};Object.keys(features).forEach(k=>{if(features[k]&&labels[k])out.push(labels[k])});return out.slice(0,5)}function selectPlan(planId){subscriptionPlanInput.value=String(planId||"");brandPlanGrid.querySelectorAll(".plan-card").forEach(card=>card.classList.toggle("is-selected",card.getAttribute("data-plan-id")===subscriptionPlanInput.value))}
+function renderBrandPlans(plans){if(!brandPlanGrid)return;if(!plans.length){brandPlanGrid.innerHTML='<div class="plan-empty">No brand plans are available right now.</div>';return}brandPlanGrid.innerHTML=plans.map(plan=>{const features=planFeatures(plan).map(item=>"<li>"+escapeHtml(item)+"</li>").join("");return '<label class="plan-card" data-plan-id="'+escapeHtml(plan.subscription_plan_id||plan.id||"")+'"><input type="radio" name="subscription_plan_choice" value="'+escapeHtml(plan.subscription_plan_id||plan.id||"")+'"><span class="plan-card__tier">'+escapeHtml(badgeForTier(plan.tier))+'</span><h3 class="plan-card__name">'+escapeHtml(plan.plan_name||"Brand Plan")+'</h3><p class="plan-card__price">'+escapeHtml(formatMoney(plan.monthly_price_aed))+' <span>/month</span></p><ul>'+(features||"<li>Plan details available after selection.</li>")+'</ul></label>'}).join("");brandPlanGrid.querySelectorAll(".plan-card").forEach(card=>{card.addEventListener("click",()=>selectPlan(card.getAttribute("data-plan-id")))});if(restoredData.subscription_plan_id)selectPlan(restoredData.subscription_plan_id);else{const first=brandPlanGrid.querySelector(".plan-card");if(first)selectPlan(first.getAttribute("data-plan-id"))}}
+async function lookups(){try{fill(document.getElementById("country_id"),rows(await postApi("country",{})),["country_id","id"],["country_name","name"],"Select country");if(restoredData.country_id)document.getElementById("country_id").value=restoredData.country_id}catch(e){console.error("country lookup failed",e)}try{fill(document.getElementById("brand_industry_id"),rows(await postApi("industry",{})),["industry_id","id"],["industry_name","name"],"Select industry");if(restoredData.brand_industry_id)document.getElementById("brand_industry_id").value=restoredData.brand_industry_id}catch(e){console.error("industry lookup failed",e)}try{const plans=rows(await postApi("subscription-plans",{usertype:0})).filter(plan=>String(plan.plan_type||"").toLowerCase()==="brand").sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));renderBrandPlans(plans)}catch(e){console.error("plan lookup failed",e);if(brandPlanGrid)brandPlanGrid.innerHTML='<div class="plan-empty">Brand plans could not be loaded from the API.</div>';show("Brand subscription plans could not be loaded from the API.",false)}try{const ownerDocs=rows(await postApi("user-document-type",{}));fill(document.getElementById("owner_document_type_id"),ownerDocs,["document_type_id","id"],["document_type_name","name","title"],"Select owner document type");if(restoredData.owner_document_type_id)document.getElementById("owner_document_type_id").value=restoredData.owner_document_type_id}catch(e){console.error("owner document type lookup failed",e)}try{const companyDocs=rows(await postApi("brand-document-type",{}));fill(document.getElementById("company_document_type_id"),companyDocs,["document_type_id","id"],["document_type_name","name","title"],"Select company document type");if(restoredData.company_document_type_id)document.getElementById("company_document_type_id").value=restoredData.company_document_type_id}catch(e){console.error("company document type lookup failed",e)}if(document.getElementById("brand_industry_id").value)await categories(document.getElementById("brand_industry_id").value);if(document.getElementById("country_id").value)await provinces(document.getElementById("country_id").value)}
+function pickUserId(payload){const d=payload&&payload.data||{};const remoteData=d.data||d;return remoteData.id||remoteData.user_id||d.id||d.user_id||payload&&payload.user_id||null}
+function withUserId(extra){const out={...extra};if(state.userId!=null&&state.userId!==""){out.id=state.userId;out.user_id=state.userId}return out}
+async function account(){if(state.accountCreated)return;const j=await postApiRaw("signup",{user_type:"0",email:brandEmail.value.trim(),password:document.getElementById("brand_password").value});const message=String(j&&j.message||"");const existingNeedsVerify=/already registered.*verify your email/i.test(message);const existingAccount=/incorrect password/i.test(message)||/already registered/i.test(message)||/already exists/i.test(message)||/email.*exists/i.test(message);if((j&&j.success)||existingNeedsVerify){state.userId=pickUserId(j)||state.userId;state.accountCreated=true;state.emailOtpSent=true;state.emailVerified=true;syncWizardState();document.getElementById("email-copy").textContent="Email confirmation is temporarily bypassed for "+brandEmail.value.trim()+". Continue to the next step.";if(existingNeedsVerify)show("Email confirmation is bypassed for now. Continue to the next step.",true);return}if(existingAccount){throw new Error("This email is already registered. Sign in from login, or use the same existing account details instead of creating a new one.")}throw new Error(message||"Unable to create account.")}
+async function verifyEmailOtp(){await account();state.emailOtpSent=true;state.emailVerified=true;syncWizardState();show("Email confirmation skipped for now.",true)}
+async function verifyPhoneOtp(){await account();state.phoneOtpSent=true;state.phoneVerified=true;syncWizardState();ownerPhoneConfirm.value=ownerPhone.value.trim();show("Phone confirmation skipped for now.",true)}
+async function loadBrandCategories(industryId){const select=document.getElementById("brand_category_id");if(!industryId){select.innerHTML='<option value="">Select category</option>';return}try{fill(select,rows(await postLookup("category",{industry_id:Number(industryId)})),["category_id","id"],["category_name","name"],"Select category");if(restoredData.brand_category_id)select.value=restoredData.brand_category_id}catch(e){console.error("category lookup failed",e)}}
+async function loadCompanySizes(industryId){const select=document.getElementById("company_size_id");if(!industryId){select.innerHTML='<option value="">Select company size</option>';return}try{fill(select,rows(await postLookup("brand-size",{industry_id:Number(industryId)})),["brand_size_id","niche_id","id"],["brand_size_name","niche_name","name","title"],"Select company size");if(restoredData.company_size_id)select.value=restoredData.company_size_id}catch(e){console.error("company size lookup failed",e);show("Company size could not be loaded from the API.",false)}}
+async function loadCompanyTypes(industryId){const select=document.getElementById("company_type_id");if(!industryId){select.innerHTML='<option value="">Select company type</option>';return}try{fill(select,rows(await postLookup("brand-type",{industry_id:Number(industryId)})),["brand_type_id","id"],["brand_type_name","name","title"],"Select company type");if(restoredData.company_type_id)select.value=restoredData.company_type_id}catch(e){console.error("company type lookup failed",e);show("Company type could not be loaded from the API.",false)}}
+async function categories(industryId){if(!industryId){document.getElementById("brand_category_id").innerHTML='<option value="">Select category</option>';document.getElementById("company_size_id").innerHTML='<option value="">Select company size</option>';document.getElementById("company_type_id").innerHTML='<option value="">Select company type</option>';return}await Promise.allSettled([loadBrandCategories(industryId),loadCompanySizes(industryId),loadCompanyTypes(industryId)])}
+async function provinces(countryId){if(!countryId){document.getElementById("province_id").innerHTML='<option value="">Select emirate</option>';return}try{fill(document.getElementById("province_id"),rows(await postLookup("province",{country_id:Number(countryId)})),["province_id","id"],["province_name","name"],"Select emirate");if(restoredData.province_id)document.getElementById("province_id").value=restoredData.province_id}catch(e){console.error("province lookup failed",e)}}
+function saveDraft(){const fd=new FormData(form),data={};fd.forEach((v,k)=>data[k]=v instanceof File?(v.name||""):v);localStorage.setItem("brandSignupDraft",JSON.stringify(data));syncWizardState();show("Progress saved on this browser.",true)}
+function restore(){const raw=localStorage.getItem("brandSignupDraft");state.emailOtpSent=true;state.emailVerified=true;state.phoneOtpSent=true;state.phoneVerified=true;state.userId=sessionStorage.getItem("brandSignupUserId")||null;state.accountCreated=Boolean(state.userId);if(!raw)return;try{const data=JSON.parse(raw);Object.keys(restoredData).forEach(k=>delete restoredData[k]);Object.assign(restoredData,data);Object.keys(data).forEach(k=>{const f=form.elements[k];if(f&&f.type!=="file")f.value=data[k]})}catch(e){console.error("draft restore failed",e)}}
+async function uploadDocuments(){const fd=new FormData();const companyLogo=document.getElementById("company_logo").files[0],ownerDoc=document.getElementById("owner_document_upload").files[0],companyDoc=document.getElementById("company_document_upload").files[0],payload=withUserId({email:brandEmail.value.trim(),brand_name:document.getElementById("brand_name").value.trim(),owner_name:document.getElementById("owner_name").value.trim(),owner_email:document.getElementById("owner_email").value.trim(),owner_phone:ownerPhone.value.trim(),owner_document_type_id:document.getElementById("owner_document_type_id").value,company_document_type_id:document.getElementById("company_document_type_id").value});Object.keys(payload).forEach(key=>fd.append(key,payload[key]));if(companyLogo)fd.append("company_logo",companyLogo);if(ownerDoc)fd.append("owner_document_upload",ownerDoc);if(companyDoc)fd.append("company_document_upload",companyDoc);if(companyLogo||ownerDoc||companyDoc)await postApiForm("brand-upload-documents",fd)}
+async function submitAll(){await account();await postApi("register",withUserId({email:brandEmail.value.trim(),phone:ownerPhone.value.trim(),brand_name:document.getElementById("brand_name").value.trim(),contact_name:document.getElementById("owner_name").value.trim(),country_id:Number(document.getElementById("country_id").value||0)||null,province_id:Number(document.getElementById("province_id").value||0)||null,industry_id:Number(document.getElementById("brand_industry_id").value||0)||null,category_id:Number(document.getElementById("brand_category_id").value||0)||null,niche_id:null,brand_size_id:Number(document.getElementById("company_size_id").value||0)||null,brand_type_id:Number(document.getElementById("company_type_id").value||0)||null}));await uploadDocuments();await postApi("final-register",withUserId({email:brandEmail.value.trim(),brand_name:document.getElementById("brand_name").value.trim(),subscription_plan_id:Number(subscriptionPlanInput.value||0)||null,document_type_id:Number(document.getElementById("company_document_type_id").value||0)||null,owner_document_type_id:Number(document.getElementById("owner_document_type_id").value||0)||null,industry_id:Number(document.getElementById("brand_industry_id").value||0)||null,brand_size_id:Number(document.getElementById("company_size_id").value||0)||null,brand_type_id:Number(document.getElementById("company_type_id").value||0)||null,username:document.getElementById("brand_username").value.trim(),owner_name:document.getElementById("owner_name").value.trim(),owner_email:document.getElementById("owner_email").value.trim(),owner_phone:ownerPhone.value.trim(),preferred_communication:document.getElementById("preferred_communication").value,company_name:document.getElementById("company_name").value.trim(),company_website:document.getElementById("company_website").value.trim(),company_bio:document.getElementById("company_bio").value.trim(),company_address:document.getElementById("company_address").value.trim(),city_name:document.getElementById("city_name").value.trim(),country_id:Number(document.getElementById("country_id").value||0)||null,province_id:Number(document.getElementById("province_id").value||0)||null,category_id:Number(document.getElementById("brand_category_id").value||0)||null,year_established:document.getElementById("year_established").value.trim()}))}
+document.getElementById("brand_industry_id").addEventListener("change",e=>categories(e.target.value));document.getElementById("country_id").addEventListener("change",e=>provinces(e.target.value));ownerPhone.addEventListener("change",()=>{state.phoneOtpSent=true;state.phoneVerified=true;ownerPhoneConfirm.value=ownerPhone.value.trim();syncWizardState()});prevBtn.addEventListener("click",()=>{if(current>1)setStep(current-1)});nextBtn.addEventListener("click",async()=>{if(!valid(current))return;try{if(current===2)await verifyEmailOtp();if(current===3)await verifyPhoneOtp();if(current<steps.length)setStep(current+1)}catch(e){show(e.message||"Unable to verify this step.",false)}});saveBtn.addEventListener("click",saveDraft);form.addEventListener("submit",async e=>{e.preventDefault();if(!valid(current))return;submitBtn.disabled=true;try{await submitAll();localStorage.removeItem("brandSignupDraft");sessionStorage.removeItem("brandEmailOtpSent");sessionStorage.removeItem("brandPhoneOtpSent");sessionStorage.removeItem("brandEmailVerified");sessionStorage.removeItem("brandPhoneVerified");sessionStorage.removeItem("brandSignupUserId");form.style.display="none";wizard.querySelector(".progress-wrap").style.display="none";welcome.classList.add("active")}catch(err){show(err.message||"Unable to submit information.",false)}finally{submitBtn.disabled=false}});fileLabel("company_logo","company_logo_name");fileLabel("owner_document_upload","owner_document_upload_name");fileLabel("company_document_upload","company_document_upload_name");restore();lookups();setStep(1);
+})();
+(function(){
+const modeInputs=[...document.querySelectorAll('input[name="signup_mode"]')],brandPane=document.getElementById("brand-wizard"),influencerPane=document.getElementById("influencer-wizard");
+function setMode(mode){brandPane.classList.toggle("active",mode==="brand");influencerPane.classList.toggle("active",mode==="influencer")}
+modeInputs.forEach(input=>input.addEventListener("change",()=>setMode(input.value)));setMode((modeInputs.find(input=>input.checked)||{}).value||"brand");
+})();
+(function(){
+const wizard=document.getElementById("influencer-wizard"),form=document.getElementById("influencer-signup-form");if(!wizard||!form)return;
+const steps=[...wizard.querySelectorAll(".step")],chips=[...wizard.querySelectorAll(".chip")],progress=document.getElementById("influencer-progress-bar"),copy=document.getElementById("influencer-step-copy"),status=document.getElementById("inf-status"),welcome=document.getElementById("inf-welcome"),prevBtn=document.getElementById("inf-prev-btn"),nextBtn=document.getElementById("inf-next-btn"),submitBtn=document.getElementById("inf-submit-btn"),saveBtn=document.getElementById("inf-save-btn"),email=document.getElementById("inf_email"),phone=document.getElementById("inf_phone"),planInput=document.getElementById("inf_subscription_plan_id"),planGrid=document.getElementById("influencer-plan-grid"),countrySelect=document.getElementById("inf_country_id"),provinceSelect=document.getElementById("inf_province_id"),industrySelect=document.getElementById("inf_industry_id"),categorySelect=document.getElementById("inf_primary_category_id"),primaryNicheSelect=document.getElementById("inf_primary_niche_id"),secondaryNicheSelect=document.getElementById("inf_secondary_niche_id"),documentTypeSelect=document.getElementById("inf_document_type");
+let current=1;const meta=["Step 1 of 5: create your account.","Step 2 of 5: email confirmation is bypassed for now.","Step 3 of 5: phone confirmation is bypassed for now.","Step 4 of 5: complete profile details.","Step 5 of 5: add creator details and submit."],state={userId:null,accountCreated:false},draftKey="influencerSignupDraft",sessionKey="influencerSignupUserId",proxyUrl="signup-api.php";
+function show(msg,ok){status.textContent=msg;status.className="status show "+(ok?"ok":"bad")}function clear(){status.className="status";status.textContent=""}
+function setStep(step){current=step;steps.forEach((s,i)=>s.classList.toggle("active",i+1===step));chips.forEach((c,i)=>{c.classList.toggle("active",i+1===step);c.classList.toggle("done",i+1<step)});progress.style.width=((step-1)/(steps.length-1))*100+"%";copy.textContent=meta[step-1];prevBtn.style.display=step===1?"none":"inline-flex";nextBtn.style.display=step===steps.length?"none":"inline-flex";submitBtn.style.display=step===steps.length?"inline-flex":"none";clear()}
+function required(step){return steps[step-1].querySelectorAll("[required]")}
+function valid(step){for(const f of required(step)){if(!String(f.value||"").trim()){f.reportValidity();return false}}if(step===1){const p=document.getElementById("inf_password").value,c=document.getElementById("inf_password_confirm").value;if(p.length<8){show("Password must be at least 8 characters long.",false);return false}if(p!==c){show("Passwords do not match.",false);return false}}if(step===4&&!String(planInput.value||"").trim()){show("Select a creator subscription plan to continue.",false);return false}clear();return true}
+async function readJson(r){const t=await r.text();try{return t?JSON.parse(t):{}}catch(e){throw new Error("Unexpected response from "+r.url)}}async function parseResponse(r){const j=await readJson(r);if(!r.ok)throw new Error(j&&j.message||("Failed: "+r.url));if(j&&typeof j==="object"&&!Array.isArray(j)&&Object.prototype.hasOwnProperty.call(j,"success")&&!j.success)throw new Error(j.message||("Failed: "+r.url));return j}
+async function postJson(url,payload){return parseResponse(await fetch(url,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload||{})}))}
+async function postForm(url,formData){return parseResponse(await fetch(url,{method:"POST",headers:{"Accept":"application/json"},body:formData}))}
+async function postProxy(action,payload){return parseResponse(await fetch(proxyUrl,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({action:action,payload:payload||{}})}))}
+function rows(x){if(Array.isArray(x))return x;const d=x&&x.data;return Array.isArray(d)?d:Array.isArray(d&&d.data)?d.data:Array.isArray(d&&d.result)?d.result:Array.isArray(d&&d.response)?d.response:Array.isArray(x&&x.result)?x.result:Array.isArray(x&&x.response)?x.response:[]}
+function fill(sel,list,vks,lks,ph){sel.innerHTML='<option value="">'+ph+"</option>";(list||[]).forEach((r,i)=>{const o=document.createElement("option"),vk=vks.find(k=>r[k]!=null),lk=lks.find(k=>r[k]!=null);o.value=vk?r[vk]:i+1;o.textContent=lk?r[lk]:"Option "+(i+1);sel.appendChild(o)})}
+function fileLabel(inputId,labelId){const i=document.getElementById(inputId),l=document.getElementById(labelId);if(!i||!l)return;i.addEventListener("change",()=>{l.textContent=i.files&&i.files[0]?i.files[0].name:"No file selected"})}
+function selectPlan(planId){planInput.value=String(planId||"");planGrid.querySelectorAll(".plan-card").forEach(card=>card.classList.toggle("is-selected",card.getAttribute("data-plan-id")===planInput.value))}
+function escapeHtml(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}function formatMoney(v){const n=Number(v);return n===n?"AED "+n.toLocaleString(undefined,{maximumFractionDigits:0}):"Custom"}function badgeForTier(tier){const map={free:"Basic Access",premium:"Priority + Analytics",elite:"Dedicated Manager + PR",celebrity:"Celebrity & VIP",pro:"Priority + Analytics"};return map[String(tier||"").toLowerCase()]||String(tier||"Plan")}
+function planFeatures(plan){const out=[],features=plan.features_json||{};if(plan.admin_fee_pct!=null)out.push(plan.admin_fee_pct+"% admin fee per deal");if(plan.payment_cycle_days!=null)out.push(plan.payment_cycle_days+"-day payment cycle");const labels={featured_profile:"Featured profile placement",unlimited_applications:"Unlimited campaign applications",priority_ranking:"Higher search priority",brand_view_tracking:"Brand view tracking",direct_outreach:"Direct brand outreach",top_search_ranking:"Top-tier search priority",private_campaigns:"Private campaign access",fast_payout:"Faster payments",priority_invites:"Priority campaign invites",verified_profile:"Verified profile",highest_priority:"Highest priority placement",exclusive_campaigns:"Exclusive campaigns",private_brand_intro:"Private brand introductions",premium_exposure:"Premium exposure",advanced_analytics:"Advanced analytics"};Object.keys(features).forEach(k=>{if(features[k]&&labels[k])out.push(labels[k])});return out.slice(0,5)}
+function renderPlans(plans){if(!plans.length){planGrid.innerHTML='<div class="plan-empty">No creator plans are available right now.</div>';return}planGrid.innerHTML=plans.map(plan=>{const features=planFeatures(plan).map(item=>"<li>"+escapeHtml(item)+"</li>").join("");return '<label class="plan-card" data-plan-id="'+escapeHtml(plan.subscription_plan_id||plan.id||"")+'"><input type="radio" name="inf_subscription_plan_choice" value="'+escapeHtml(plan.subscription_plan_id||plan.id||"")+'"><span class="plan-card__tier">'+escapeHtml(badgeForTier(plan.tier))+'</span><h3 class="plan-card__name">'+escapeHtml(plan.plan_name||"Creator Plan")+'</h3><p class="plan-card__price">'+escapeHtml(formatMoney(plan.monthly_price_aed))+' <span>/month</span></p><ul>'+(features||"<li>Plan details available after selection.</li>")+'</ul></label>'}).join("");planGrid.querySelectorAll(".plan-card").forEach(card=>card.addEventListener("click",()=>selectPlan(card.getAttribute("data-plan-id"))));if(String(planInput.value||"").trim())selectPlan(planInput.value);else{const first=planGrid.querySelector(".plan-card");if(first)selectPlan(first.getAttribute("data-plan-id"))}}
+async function loadProvinces(countryId){if(!countryId){provinceSelect.innerHTML='<option value="">Select emirate</option>';return}fill(provinceSelect,rows(await postProxy("province",{country_id:Number(countryId)})),["province_id","id"],["province_name","name"],"Select emirate")}
+async function loadIndustryData(industryId){if(!industryId){categorySelect.innerHTML='<option value="">Select category</option>';primaryNicheSelect.innerHTML='<option value="">Select niche</option>';secondaryNicheSelect.innerHTML='<option value="">Select niche</option>';return}fill(categorySelect,rows(await postProxy("category",{industry_id:Number(industryId)})),["category_id","id"],["category_name","name"],"Select category");const nicheRows=rows(await postProxy("niche",{industry_id:Number(industryId)}));fill(primaryNicheSelect,nicheRows,["niche_id","id"],["niche_name","name"],"Select niche");fill(secondaryNicheSelect,nicheRows,["niche_id","id"],["niche_name","name"],"Select niche")}
+async function lookups(){try{fill(countrySelect,rows(await postProxy("country",{})),["country_id","id"],["country_name","name"],"Select country")}catch(e){console.error("country lookup failed",e)}try{fill(industrySelect,rows(await postProxy("industry",{})),["industry_id","id"],["industry_name","name"],"Select industry")}catch(e){console.error("industry lookup failed",e);show("Industry list could not be loaded from the API.",false)}try{fill(documentTypeSelect,rows(await postProxy("user-document-type",{})),["document_type_id","id"],["document_type_name","name","title"],"Select document type")}catch(e){console.error("document type lookup failed",e)}try{const plans=rows(await postProxy("subscription-plans",{usertype:1})).filter(plan=>String(plan.plan_type||"").toLowerCase()==="influencer").sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));renderPlans(plans)}catch(e){console.error("plan lookup failed",e);planGrid.innerHTML='<div class="plan-empty">Creator plans could not be loaded from the API.</div>'}if(countrySelect.value){try{await loadProvinces(countrySelect.value)}catch(e){console.error("province lookup failed",e)}}if(industrySelect.value){try{await loadIndustryData(industrySelect.value)}catch(e){console.error("industry-related lookup failed",e)}}}
+async function account(){if(state.accountCreated)return;const res=await postJson("web/api/register/init.php",{user_type:"influencer",email:email.value.trim(),password:document.getElementById("inf_password").value});state.userId=(res.data&&res.data.user_id)||res.user_id||null;state.accountCreated=true;sessionStorage.setItem(sessionKey,String(state.userId||""));document.getElementById("inf-email-copy").textContent="Email confirmation is temporarily bypassed for "+email.value.trim()+". Continue to the next step."}
+function restore(){state.userId=sessionStorage.getItem(sessionKey)||null;state.accountCreated=Boolean(state.userId);const raw=localStorage.getItem(draftKey);if(!raw)return;try{const data=JSON.parse(raw);Object.keys(data).forEach(k=>{const el=document.getElementById(k);if(el&&el.type!=="file")el.value=data[k]});if(data.inf_subscription_plan_id)planInput.value=String(data.inf_subscription_plan_id)}catch(e){console.error(e)}}
+function saveDraft(){const data={};form.querySelectorAll("input,select,textarea").forEach(el=>{if(el.id&&el.type!=="file")data[el.id]=el.value});data.inf_subscription_plan_id=planInput.value;localStorage.setItem(draftKey,JSON.stringify(data));show("Progress saved on this browser.",true)}
+function parseCsv(text){return String(text||"").split(",").map(x=>x.trim()).filter(Boolean)}
+async function submitAll(){await account();await postJson("web/api/register/influencer/profile.php",{influencer_id:Number(state.userId),full_name:document.getElementById("inf_full_name").value.trim(),country_id:Number(countrySelect.value||0)||null,province_id:Number(provinceSelect.value||0)||null,city_name:document.getElementById("inf_city_name").value.trim(),date_of_birth:document.getElementById("inf_date_of_birth").value,gender:Number(document.getElementById("inf_gender").value||0),influencer_type:Number(document.getElementById("inf_type").value||0),industry_id:Number(industrySelect.value||0)||null,subscription_plan_id:Number(planInput.value||0)||null});await postJson("web/api/register/influencer/niche.php",{influencer_id:Number(state.userId),bio:document.getElementById("inf_bio").value.trim(),experience_since:Number(document.getElementById("inf_experience_since").value||0)||null,industry_id:Number(industrySelect.value||0)||null,primary_niche_id:Number(primaryNicheSelect.value||0)||null,secondary_niche_id:Number(secondaryNicheSelect.value||0)||null,past_brands:parseCsv(document.getElementById("inf_past_brands").value),content_categories:[Number(categorySelect.value||0)].filter(Boolean),subscription_plan_id:Number(planInput.value||0)||null});const socialAccounts=[];const instagram=document.getElementById("inf_instagram").value.trim(),tiktok=document.getElementById("inf_tiktok").value.trim(),youtube=document.getElementById("inf_youtube").value.trim();if(instagram)socialAccounts.push({platform_id:3,username:instagram.replace(/^@/,""),profile_link:instagram.startsWith("http")?instagram:"https://www.instagram.com/"+instagram.replace(/^@/,""),is_verified:0});if(tiktok)socialAccounts.push({platform_id:4,username:tiktok.replace(/^@/,""),profile_link:tiktok.startsWith("http")?tiktok:"https://www.tiktok.com/@"+tiktok.replace(/^@/,""),is_verified:0});if(youtube)socialAccounts.push({platform_id:2,username:youtube,profile_link:youtube,is_verified:0});const fd=new FormData();fd.append("influencer_id",String(state.userId));fd.append("subscription_plan_id",planInput.value||"");fd.append("open_to_brand_collab","1");fd.append("price_per_post",document.getElementById("inf_price_per_post").value||"");fd.append("is_negotiable","1");fd.append("collaboration_type",document.getElementById("inf_collaboration_type").value);fd.append("document_type",documentTypeSelect.selectedOptions[0]?.textContent||"");fd.append("social_accounts",JSON.stringify(socialAccounts));const countries=parseCsv(document.getElementById("inf_top_countries").value);if(countries.length)fd.append("top_countries",JSON.stringify(countries));const genderSplit=document.getElementById("inf_gender_split").value.trim();if(genderSplit)fd.append("gender_split",genderSplit);const ageGroups=document.getElementById("inf_age_groups").value.trim();if(ageGroups)fd.append("age_groups",ageGroups);const doc=document.getElementById("inf_document_file").files[0];if(doc)fd.append("document_file",doc);await postForm("web/api/register/influencer/social-pricing.php",fd)}
+countrySelect.addEventListener("change",async e=>{try{await loadProvinces(e.target.value)}catch(err){console.error(err);show("Province list could not be loaded from the API.",false)}});industrySelect.addEventListener("change",async e=>{try{await loadIndustryData(e.target.value)}catch(err){console.error(err);show("Category and niche lists could not be loaded from the API.",false)}});prevBtn.addEventListener("click",()=>{if(current>1)setStep(current-1)});nextBtn.addEventListener("click",async()=>{if(!valid(current))return;try{if(current===2)await account();if(current===3)await account();if(current<steps.length)setStep(current+1)}catch(e){show(e.message||"Unable to continue.",false)}});saveBtn.addEventListener("click",saveDraft);form.addEventListener("submit",async e=>{e.preventDefault();if(!valid(current))return;submitBtn.disabled=true;try{await submitAll();localStorage.removeItem(draftKey);sessionStorage.removeItem(sessionKey);form.style.display="none";wizard.querySelector(".progress-wrap").style.display="none";welcome.classList.add("active")}catch(err){show(err.message||"Unable to submit information.",false)}finally{submitBtn.disabled=false}});fileLabel("inf_document_file","inf_document_file_name");restore();lookups();setStep(1);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICONS ICON -->
+    <link rel="icon" href="assets/img/fav.png" type="icon">
+
+    <title>Opulent Influencer House</title>
+
+    <!-- libraries CSS -->
+    <link rel="stylesheet" href="assets/font/flaticon_jio_-_influencer.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
+    <link rel="stylesheet" href="assets/vendor/plyr/plyr.css">
+    <link rel="stylesheet" href="assets/vendor/slim-select/slimselect.css">
+    <link rel="stylesheet" href="assets/vendor/no-ui-slider/nouislider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      #subscription-pricing .pricing-mode-header {
+        text-align: center;
+        margin-bottom: 1.25rem;
+      }
+      #subscription-pricing .pricing-mode-sub {
+        margin: 0.5rem auto 0;
+        max-width: 28rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #6c6c76;
+        font-weight: 400;
+      }
+      /* Segmented control — standard iOS/Material-style */
+      .pricing-mode-segment {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2.75rem;
+        padding: 0 0.5rem;
+      }
+      .pricing-mode-segment__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        width: 100%;
+        max-width: 420px;
+        padding: 5px;
+        border-radius: 100px;
+        background: linear-gradient(180deg, #eceaf2 0%, #e4e2eb 100%);
+        border: 1px solid rgba(26, 26, 46, 0.08);
+        box-shadow:
+          inset 0 1px 1px rgba(255, 255, 255, 0.75),
+          inset 0 -1px 2px rgba(0, 0, 0, 0.04);
+      }
+      .pricing-mode-segment__pill {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: calc(50% - 5px);
+        bottom: 5px;
+        border-radius: 100px;
+        background: linear-gradient(180deg, #ffffff 0%, #faf9fc 100%);
+        box-shadow:
+          0 2px 8px rgba(80, 60, 140, 0.12),
+          0 1px 2px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .pricing-mode-segment__inner.is-influencer .pricing-mode-segment__pill {
+        transform: translateX(calc(100% + 5px));
+      }
+      .pricing-mode-segment__btn {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0.72rem 1rem;
+        border: none;
+        background: transparent;
+        font-family: inherit;
+        font-size: clamp(0.82rem, 2vw, 0.95rem);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #7a7a88;
+        cursor: pointer;
+        border-radius: 100px;
+        transition: color 0.28s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .pricing-mode-segment__btn:hover:not(.is-active) {
+        color: #52525c;
+      }
+      .pricing-mode-segment__btn.is-active {
+        color: #1a1a24;
+      }
+      .pricing-mode-segment__btn:focus {
+        outline: none;
+      }
+      .pricing-mode-segment__btn:focus-visible {
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(124, 92, 255, 0.45);
+        z-index: 2;
+      }
+      .pricing-mode-segment .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @media (max-width: 400px) {
+        .pricing-mode-segment__btn {
+          padding: 0.65rem 0.5rem;
+          letter-spacing: 0.03em;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pricing-mode-segment__pill {
+          transition: none;
+        }
+        .pricing-mode-segment__btn {
+          transition: none;
+        }
+      }
+      
+  <!-- Optional: unify icon size and color -->
+  
+    .tt-footer-top__socials .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        margin: 0 4px;
+        color: #ffffff;  /* Change to your desired color */
+        transition: opacity 0.3s ease;
+    }
+    .tt-footer-top__socials .social-icon:hover {
+        opacity: 0.8;
+    }
+    .tt-footer-top__socials .social-icon svg,
+    .tt-footer-top__socials .social-icon i {
+        width: 20px;
+        height: 20px;
+    }
+    /* If Font Awesome is loaded, ensure it uses the same color */
+    .tt-footer-top__socials .social-icon i {
+        font-size: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- sidebar -->
+    <div class="jo-sidebar">
+        <div>
+            <!-- heading -->
+            <div class="jo-sidebar__heading d-flex justify-content-between align-items-center">
+                <a href="#"><img src="assets/img/favicon.png" alt="logo" class="logo"></a>
+                <button type="button" class="jo-sidebar-close-btn"><i class="flaticon-add-plus-button"></i></button>
+            </div>
+
+            <!-- mobile menu -->
+            <div class="jo-header-nav-in-mobile"></div>
+        </div>
+
+        <div>
+            <a href="signup.html" class="jo-btn"><i class="flaticon-add-plus-button"></i>Sign Up</a>
+            <!-- Add Font Awesome in your <head> if not already present -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- socials -->
+<div class="col-lg-3 col-6 col-xxs-12 order-lg-2 order-1">
+    <div class="tt-footer-top__socials jo-footer-top__socials justify-content-start justify-content-sm-end">
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61585214585761" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <!-- Snapchat -->
+        <a href="https://snapchat.com/t/r6Pjgsw3" target="_blank" rel="noopener noreferrer" aria-label="Snapchat">
+            <i class="fab fa-snapchat-ghost"></i>
+        </a>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+
+    <!-- HEADER SECTION START -->
+    <header class="jo-header">
+       <div class="logo">
+       <a href="index.html">
+        <img src="assets/img/favicon.png" alt="logo"></a>
+</div>
+        <div class="jo-header-right">
+            <div class="jo-header-nav">
+                <div class="to-go-to-sidebar-in-mobile">
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="for-brands.html">For Brands</a>
+                        <a href="for-influencers.html">For Influencers</a>
+                        <a href="service.html">Services</a>
+                        <a href="blog.html">Blogs</a>
+                        
+                     
+                        <a href="contact.html">Contact</a>
+
+                    </nav>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="signup.html" class="jo-btn"><i class="flaticon-add-plus-button"></i>Sign Up</a>
+                <button class="jo-header-sidebar-open-btn jo-btn px-3 d-inline-block d-lg-none"><i class="flaticon-menu"></i></button>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER SECTION END -->
+
+    <main>
+        <!-- BANNER SECTION START -->
+        <section class="jo-banner">
+            <div class="jo-banner-container">
+                <div class="row gx-0 gy-4 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="jo-banner__txt">
+                            
+                           <section class="hero-title">
+  <h1 class="heros-title__heading">
+    The <span class="hero-title__highlight">ecosystem of brand and influence</span>
+  </h1>
+
+  <p class="heros-title__subtext">
+   A Dubai-headquartered influencer institution connecting verified creators with serious
+brands through structure, compliance, and measurable results.
+  </p>
+</section>
+
+                            <div class="jo-banner__btns">
+                                <a href="about.html" class="jo-btn">About Us</a>
+                                <a href="contact.html" class="jo-btn">Contact Us</a>
+                            </div>
+
+                            <!-- vector -->
+                            <img src="assets/img/jo-banner-vector-1.svg" alt="vector" class="vector">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="jo-slider">
+    <div class="jo-slide active">
+        <div class="jo-banner__img jo-contact__img">
+            <img src="assets/img/jo1.jpg" alt="Creator filming content in a studio setting">
+            <div class="jo-banner__followers">
+                <span class="number">74K</span>
+                <span class="txt">Followers</span>
+            </div>
+            <div class="jo-banner__notifi">
+                <img src="assets/img/user-dp-2.png" alt="img">
+                <span>Bryan has liked</span>
+                <span class="icon"><img src="assets/img/love.svg" alt="icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="jo-slide">
+        <div class="jo-banner__img jo-contact__img">
+            <img src="assets/img/jo2.jpg" alt="Beauty creator presenting products on camera">
+            <div class="jo-banner__followers">
+                <span class="number">56K</span>
+                <span class="txt">Followers</span>
+            </div>
+            <div class="jo-banner__notifi">
+                <img src="assets/img/user-dp-2.png" alt="img">
+                <span>Emma has liked</span>
+                <span class="icon"><img src="assets/img/love.svg" alt="icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="jo-slide">
+        <div class="jo-banner__img jo-contact__img">
+            <img src="assets/img/jo3.jpg" alt="Lifestyle creator recording a product demo">
+            <div class="jo-banner__followers">
+                <span class="number">56K</span>
+                <span class="txt">Followers</span>
+            </div>
+            <div class="jo-banner__notifi">
+                <img src="assets/img/user-dp-2.png" alt="img">
+                <span>Emma has liked</span>
+                <span class="icon"><img src="assets/img/love.svg" alt="icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="jo-slide">
+        <div class="jo-banner__img jo-contact__img">
+            <img src="assets/img/umcoming-live-1.jpg" alt="Fitness creator producing content at home">
+            <div class="jo-banner__followers">
+                <span class="number">56K</span>
+                <span class="txt">Followers</span>
+            </div>
+            <div class="jo-banner__notifi">
+                <img src="assets/img/user-dp-2.png" alt="img">
+                <span>Emma has liked</span>
+                <span class="icon"><img src="assets/img/love.svg" alt="icon"></span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+                    </div>
+                </div>
+            </div>
+            <img src="assets/img/jo-banner-vector-2.svg" alt="vector" class="vector">
+        </section>
+        <!-- BANNER SECTION END -->
+        <!-- SOCIAL LINKS SECTION START -->
+        <section class="jo-social-links">
+            <div class="jo-container">
+                <div class="row g-sm-4 g-3">
+                    <!-- single social -->
+                   <!-- <div class="col-md-3 col-6 col-xxs-12">
+                        <div class="jo-social-link">
+                            <div class="icon"><img src="assets/img/social-icon-1.png" alt="Social Media Icon"></div>
+                            <div class="txt">
+                                <h5>Facebook</h5>
+                                <span>20.5K followers</span>
+                            </div>
+                            <a href="https://www.instagram.com/opulentinfluencershouse/" class="jo-btn" target="_blank" rel="noopener noreferrer">Follow Me</a>
+                        </div>
+                    </div> -->
+
+                    <!-- single social -->
+                    <div class="col-md-3 col-6 col-xxs-12">
+                        <div class="jo-social-link">
+                            <div class="icon"><img src="assets/img/social-icon-2.png" alt="Social Media Icon"></div>
+                            <div class="txt">
+                                <h5>Instagram</h5>
+                                <span>30.9K followers</span>
+                            </div>
+                            <a href="https://www.instagram.com/opulentinfluencershouse/" class="jo-btn">Follow Me</a>
+                        </div>
+                    </div>
+
+                    <!-- single social -->
+                    <div class="col-md-3 col-6 col-xxs-12">
+                        <div class="jo-social-link">
+                            <div class="icon"><img src="assets/img/social-icon-3.png" alt="Social Media Icon"></div>
+                            <div class="txt">
+                                <h5>Tiktok</h5>
+                                <span>2.5M followers</span>
+                            </div>
+                            <a href="https://www.tiktok.com/@opulentinfluencershouse" class="jo-btn">Follow Me</a>
+                        </div>
+                    </div>
+
+                    <!-- single social -->
+                    <div class="col-md-3 col-6 col-xxs-12">
+                        <div class="jo-social-link">
+                            <div class="icon"><img src="assets/img/social-icon-4.png" alt="Social Media Icon"></div>
+                            <div class="txt">
+                                <h5>YouTube</h5>
+                                <span>1.69M Sbscribers</span>
+                            </div>
+                            <a href="https://www.youtube.com/@opulentinfluencershouse" class="jo-btn">Subscribe</a>
+                        </div>
+                    </div>
+                    
+                    <!-- single social -->
+                    <div class="col-md-3 col-6 col-xxs-12">
+                        <div class="jo-social-link">
+                            <div class="icon"><img src="assets/img/snap.png" alt="Social Media Icon"></div>
+                            <div class="txt">
+                                <h5>Snapchat</h5>
+                                <span>1.69M Sbscribers</span>
+                            </div>
+                            <a href="https://www.snapchat.com/web" class="jo-btn">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SOCIAL LINKS SECTION END -->
+
+<section class="stats-section">
+  <div class="stats-container">
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="500">0</h2>
+      <p class="stat-label">VERIFIED CREATORS</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="150">0</h2>
+      <p class="stat-label">BRAND PARTNERS</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="98" data-suffix="%">0%</h2>
+      <p class="stat-label">CLIENT RETENTION</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="6">0</h2>
+      <p class="stat-label">GCC MARKETS</p>
+    </div>
+
+  </div>
+</section>
+
+        <!-- REELS SECTION START -->
+        <section class="jo-reels">
+            <div class="jo-container">
+                <div class="jo-reels-heading">
+                    <button class="jo-slider-nav-btn jo-reels-slider-prev"><i class="flaticon-left-arrow"></i></button>
+                    <h2 class="jo-section-title">Latest Video Reels</h2>
+                    <button class="jo-slider-nav-btn jo-reels-slider-next"><i class="flaticon-right-arrow"></i></button>
+                </div>
+            </div>
+            <div class="jo-reels-container">
+                <div class="jo-reels-slider swiper">
+                    <div class="swiper-wrapper">
+                        <!-- single reel -->
+                        <div class="swiper-slide">
+                            <div class="jo-reel">
+                                <div class="jo-reel-video position-relative">
+                                    <video controls poster="assets/img/reel-thumb1.jpg" src="https://videos.pexels.com/video-files/3402899/3402899-sd_506_960_25fps.mp4 "></video>
+                                    <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
+                                </div>
+                                <div class="jo-reel-txt">
+                                    <h5 class="jo-reel-title"><a href="#">Can Robot Solve This ...?</a></h5>
+                                    <div class="jo-reel-info">
+                                        <span><i class="flaticon-bell"></i></span>
+                                        <span>16M views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single reel -->
+                        <div class="swiper-slide">
+                            <div class="jo-reel">
+                                <div class="jo-reel-video position-relative">
+                                    <video controls poster="assets/img/reel-thumb2.jpg" src="https://videos.pexels.com/video-files/3402899/3402899-sd_506_960_25fps.mp4 "></video>
+                                    <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
+                                </div>
+                                <div class="jo-reel-txt">
+                                    <h5 class="jo-reel-title"><a href="#">Can Robot Solve This ...?</a></h5>
+                                    <div class="jo-reel-info">
+                                        <span><i class="flaticon-bell"></i></span>
+                                        <span>16M views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single reel -->
+                        <div class="swiper-slide">
+                            <div class="jo-reel">
+                                <div class="jo-reel-video position-relative">
+                                    <video controls poster="assets/img/reel-thumb3.jpg" src="https://videos.pexels.com/video-files/3402899/3402899-sd_506_960_25fps.mp4 "></video>
+                                    <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
+                                </div>
+                                <div class="jo-reel-txt">
+                                    <h5 class="jo-reel-title"><a href="#">Can Robot Solve This ...?</a></h5>
+                                    <div class="jo-reel-info">
+                                        <span><i class="flaticon-bell"></i></span>
+                                        <span>16M views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single reel -->
+                        <div class="swiper-slide">
+                            <div class="jo-reel">
+                                <div class="jo-reel-video position-relative">
+                                    <video controls poster="assets/img/reel-thumb4.jpg" src="https://videos.pexels.com/video-files/3402899/3402899-sd_506_960_25fps.mp4 "></video>
+                                    <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
+                                </div>
+                                <div class="jo-reel-txt">
+                                    <h5 class="jo-reel-title"><a href="#">Can Robot Solve This ...?</a></h5>
+                                    <div class="jo-reel-info">
+                                        <span><i class="flaticon-bell"></i></span>
+                                        <span>16M views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single reel -->
+                        <div class="swiper-slide">
+                            <div class="jo-reel">
+                                <div class="jo-reel-video position-relative">
+                                    <video controls poster="assets/img/reel-thumb5.jpg" src="https://videos.pexels.com/video-files/3402899/3402899-sd_506_960_25fps.mp4 "></video>
+                                    <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
+                                </div>
+                                <div class="jo-reel-txt">
+                                    <h5 class="jo-reel-title"><a href="#">Can Robot Solve This ...?</a></h5>
+                                    <div class="jo-reel-info">
+                                        <span><i class="flaticon-bell"></i></span>
+                                        <span>16M views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single reel -->
+                        <div class="swiper-slide">
+                            <div class="jo-reel">
+                                <div class="jo-reel-video position-relative">
+                                    <video controls poster="assets/img/reel-thumb6.jpg" src="https://videos.pexels.com/video-files/3402899/3402899-sd_506_960_25fps.mp4 "></video>
+                                    <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
+                                </div>
+                                <div class="jo-reel-txt">
+                                    <h5 class="jo-reel-title"><a href="#">Can Robot Solve This ...?</a></h5>
+                                    <div class="jo-reel-info">
+                                        <span><i class="flaticon-bell"></i></span>
+                                        <span>16M views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single reel -->
+                        <div class="swiper-slide">
+                            <div class="jo-reel">
+                                <div class="jo-reel-video position-relative">
+                                    <video controls poster="assets/img/reel-thumb7.jpg" src="c:\Users\ADMIN\Downloads\opulent-influencer\main-file\assets\img\reel-thumb7.mp4"></video>
+                                    <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
+                                </div>
+                                <div class="jo-reel-txt">
+                                    <h5 class="jo-reel-title"><a href="#">Can Robot Solve This ...?</a></h5>
+                                    <div class="jo-reel-info">
+                                        <span><i class="flaticon-bell"></i></span>
+                                        <span>16M views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- REELS SECTION END -->
+    <section class="cta-section">
+  <div class="cta-content">
+    <h1>
+      Ready to <span>Transform</span> Your Influence Strategy?
+    </h1>
+
+    <p>
+      Whether you're a brand seeking verified talent or an influencer looking to elevate your career, we're here to help.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="brand-form.html" class="btn btn-filled">I'M A BRAND</a>
+      <a href="influencer-form.html" class="btn btn-outline">I'M AN INFLUENCER</a>
+    </div>
+  </div>
+</section>    
+        
+        
+<section class="featured-placement-details" id="featured-placement-details">
+  <div class="container">
+    <div class="featured-shell">
+      <div class="featured-intro">
+        <span class="featured-kicker">Premium Visibility</span>
+        <h3>Featured Placement Details</h3>
+        <p>
+          Featured placement gives approved creators and brands priority visibility across key discovery areas.
+        </p>
+      </div>
+
+      <div class="featured-overview">
+        <div class="featured-overview-card">
+          <span class="featured-overview-label">Placement Access</span>
+          <strong>Eligible paid plans</strong>
+          <p>Available on select creator and brand subscriptions.</p>
+        </div>
+        <div class="featured-overview-card">
+          <span class="featured-overview-label">Approval Focus</span>
+          <strong>Quality and readiness</strong>
+          <p>Approval depends on completeness, fit, and compliance.</p>
+        </div>
+        <div class="featured-overview-card">
+          <span class="featured-overview-label">Primary Outcome</span>
+          <strong>Higher platform discovery</strong>
+          <p>Approved listings appear in stronger marketplace positions.</p>
+        </div>
+      </div>
+
+      <div class="featured-detail-grid">
+        <article class="featured-detail-card featured-detail-card--creator" id="featured-influencer">
+          <div class="featured-detail-top">
+            <span class="featured-badge">For Influencers</span>
+            <h4>Creator Featured Placement</h4>
+            <p class="featured-price">Included in eligible paid creator plans</p>
+          </div>
+
+          <p class="featured-copy">
+            For creators who want stronger discovery and more direct brand attention.
+          </p>
+
+          <div class="featured-highlight">
+            <span class="featured-highlight-label">Ideal for</span>
+            <p>Complete, brand-ready profiles with active collaboration goals.</p>
+          </div>
+
+          <div class="featured-content-block">
+            <h5>Key Benefits</h5>
+            <ul class="featured-list">
+              <li>Featured profile visibility in creator discovery areas</li>
+              <li>Improved search priority for relevant brand queries</li>
+              <li>Spotlight placement for qualified profiles</li>
+            </ul>
+          </div>
+
+          <div class="featured-content-block">
+            <h5>Approval Flow</h5>
+            <ol class="featured-steps">
+              <li>Complete your profile and choose an eligible plan.</li>
+              <li>We review quality, relevance, and readiness.</li>
+              <li>Approved profiles go live in featured positions.</li>
+            </ol>
+          </div>
+
+          <div class="featured-actions">
+            <a href="influencer-form.html" class="apply-btn">Apply as an Influencer</a>
+            <a href="#subscription-pricing" class="apply-btn secondary">View Plans &amp; Pricing</a>
+          </div>
+        </article>
+
+        <article class="featured-detail-card featured-detail-card--brand" id="featured-brand">
+          <div class="featured-detail-top">
+            <span class="featured-badge">For Brands</span>
+            <h4>Brand Featured Placement</h4>
+            <p class="featured-price">Included in eligible paid brand plans</p>
+          </div>
+
+          <p class="featured-copy">
+            For brands that need premium exposure for live campaigns and faster creator attention.
+          </p>
+
+          <div class="featured-highlight">
+            <span class="featured-highlight-label">Ideal for</span>
+            <p>Active campaigns that need stronger reach and premium positioning.</p>
+          </div>
+
+          <div class="featured-content-block">
+            <h5>Key Benefits</h5>
+            <ul class="featured-list">
+              <li>Featured campaign listing in premium placement areas</li>
+              <li>Better visibility for creators browsing opportunities</li>
+              <li>Spotlight placement for approved campaigns</li>
+            </ul>
+          </div>
+
+          <div class="featured-content-block">
+            <h5>Approval Flow</h5>
+            <ol class="featured-steps">
+              <li>Submit your brand or campaign with an eligible plan.</li>
+              <li>We review completeness, compliance, and fit.</li>
+              <li>Approved campaigns are activated in featured slots.</li>
+            </ol>
+          </div>
+
+          <div class="featured-actions">
+            <a href="brand-form.html" class="apply-btn">Apply as a Brand</a>
+            <a href="#subscription-pricing" class="apply-btn secondary">View Plans &amp; Pricing</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="featured-note">
+        <div class="featured-note-title-wrap">
+          <span class="featured-note-kicker">Key Terms</span>
+          <h4>What to know</h4>
+        </div>
+        <ul class="featured-note-list">
+          <li>Placement is subject to review and available inventory.</li>
+          <li>Access depends on your selected plan tier.</li>
+          <li>Approval timing varies by readiness and compliance.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="influencer-section">
+  <div class="container">
+
+    <h2 class="main-heading">
+      More Than an Agency. <span>An Influencer Institution.</span>
+    </h2>
+
+    <p class="main-text">
+      Opulent Influencers House was built to professionalise the influencer economy across the UAE and GCC.
+      We operate as an infrastructure partner — not a traditional influencer agency —
+      delivering verified talent, structured operations, and full performance accountability.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">
+          ✦
+        </div>
+        <h3>Luxury & Lifestyle</h3>
+        <p>
+          Premium brand partnerships across fashion, jewelry,
+          and high-end lifestyle segments.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          🏢
+        </div>
+        <h3>Real Estate & Hospitality</h3>
+        <p>
+          Strategic influencer campaigns for hotels, resorts,
+          and premium property developments.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          🖥
+        </div>
+        <h3>Beauty & Technology</h3>
+        <p>
+          Data-driven campaigns for beauty brands and
+          innovative tech companies.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="pricing-section" id="subscription-pricing">
+  <div class="container">
+    <div class="pricing-mode-header">
+      <h2 class="section-title">Plans &amp; Pricing</h2>
+      <p class="pricing-mode-sub">Switch between brand and creator plans. All prices in AED per month.</p>
+    </div>
+    <div class="pricing-mode-segment" role="tablist" aria-label="Pricing audience">
+      <div class="pricing-mode-segment__inner" id="pricing-mode-inner">
+        <span class="pricing-mode-segment__pill" aria-hidden="true"></span>
+        <button type="button" class="pricing-mode-segment__btn is-active" id="pricing-btn-brands" role="tab" aria-selected="true" aria-controls="subscription-pricing-grid" data-pricing-mode="brand">
+          For Brands
+        </button>
+        <button type="button" class="pricing-mode-segment__btn" id="pricing-btn-influencers" role="tab" aria-selected="false" aria-controls="subscription-pricing-grid" data-pricing-mode="influencer">
+          For Influencers
+        </button>
+      </div>
+    </div>
+    <div class="pricing-grid" id="subscription-pricing-grid" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var API_URL = 'https://www.opulentprimeproperties.com/influencer_house/web/subscription-plans';
+
+  var FEATURE_LABELS = {
+    campaign_posting: 'Can post campaigns',
+    limited_campaigns: 'Limited campaigns',
+    basic_support: 'Standard support',
+    priority_listing: 'Priority listing',
+    advanced_filters: 'Advanced influencer filters',
+    analytics: 'Campaign analytics',
+    unlimited_campaigns: 'Unlimited campaigns',
+    featured_placement: 'Featured placement',
+    priority_support: 'Priority support',
+    advanced_analytics: 'Advanced analytics',
+    featured_profile: 'Featured profile placement',
+    unlimited_applications: 'Unlimited campaign applications',
+    priority_ranking: 'Higher search priority',
+    brand_view_tracking: 'Brand view tracking',
+    direct_outreach: 'Direct brand outreach',
+    top_search_ranking: 'Top-tier search priority',
+    private_campaigns: 'Private campaign access',
+    fast_payout: 'Faster payments',
+    priority_invites: 'Priority campaign invites',
+    verified_profile: 'Verified profile',
+    highest_priority: 'Highest priority placement',
+    exclusive_campaigns: 'Exclusive campaigns',
+    private_brand_intro: 'Private brand introductions',
+    premium_exposure: 'Premium exposure'
+  };
+
+  var BADGE_BRAND = {
+    free: 'Self-Serve',
+    pro: 'Tools + Priority Access',
+    elite: 'Full Managed Service'
+  };
+
+  var BADGE_INFLUENCER = {
+    free: 'Basic Access',
+    premium: 'Priority + Analytics',
+    elite: 'Dedicated Manager + PR',
+    celebrity: 'Celebrity & VIP'
+  };
+
+  var cache = {};
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function formatMonthly(aed) {
+    var n = Number(aed);
+    if (n !== n) return '';
+    return 'AED ' + n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  }
+
+  function slotsLine(plan) {
+    var n = plan.campaign_slots_per_month;
+    if (n == null) return null;
+    if (n >= 999) return 'Unlimited campaign slots';
+    return 'Up to ' + n + ' campaign slots per month';
+  }
+
+  function buildFeatureLis(plan) {
+    var items = [];
+    var isInf = String(plan.plan_type).toLowerCase() === 'influencer';
+
+    if (!isInf) {
+      var slot = slotsLine(plan);
+      if (slot) items.push(slot);
+    } else {
+      if (plan.admin_fee_pct != null) items.push(plan.admin_fee_pct + '% admin fee per deal');
+      if (plan.payment_cycle_days != null) items.push(plan.payment_cycle_days + '-day payment cycle');
+    }
+
+    var fj = plan.features_json || {};
+    Object.keys(fj).forEach(function (key) {
+      if (fj[key] && FEATURE_LABELS[key]) items.push(FEATURE_LABELS[key]);
+    });
+
+    if (!isInf && plan.commission_pct != null) {
+      items.push(plan.commission_pct + '% commission');
+    }
+
+    return items.map(function (t) {
+      return '<li>✔ ' + escapeHtml(t) + '</li>';
+    }).join('');
+  }
+
+  function isPopular(plan) {
+    var tier = (plan.tier || '').toLowerCase();
+    var isInf = String(plan.plan_type).toLowerCase() === 'influencer';
+    if (isInf) return tier === 'premium';
+    return tier === 'pro';
+  }
+
+  function cardClass(plan) {
+    return isPopular(plan) ? 'price-card popular' : 'price-card';
+  }
+
+  function badgeClass(plan) {
+    return isPopular(plan) ? 'badge popular-badge' : 'badge';
+  }
+
+  function btnClass(plan) {
+    return isPopular(plan) ? 'btns dark' : 'btns';
+  }
+
+  function badgeText(plan) {
+    var tier = (plan.tier || '').toLowerCase();
+    var isInf = String(plan.plan_type).toLowerCase() === 'influencer';
+    if (isInf) return BADGE_INFLUENCER[tier] || tier;
+    return BADGE_BRAND[tier] || tier;
+  }
+
+  function ctaLabel(plan) {
+    return String(plan.plan_type).toLowerCase() === 'influencer' ? 'Join Now' : 'Choose Plan';
+  }
+
+  function paymentsBlock() {
+    return (
+      '<div class="payments">' +
+      '<img src="https://img.icons8.com/color/48/visa.png" alt="">' +
+      '<img src="https://img.icons8.com/color/48/mastercard.png" alt="">' +
+      '<img src="https://img.icons8.com/color/48/paypal.png" alt="">' +
+      '</div>'
+    );
+  }
+
+  function render(plans) {
+    var grid = document.getElementById('subscription-pricing-grid');
+    if (!grid) return;
+
+    grid.innerHTML = plans
+      .map(function (plan) {
+        var name = plan.plan_name || '';
+        var price = formatMonthly(plan.monthly_price_aed);
+
+        return (
+          '<div class="' + cardClass(plan) + '">' +
+          '<span class="' + badgeClass(plan) + '">' + escapeHtml(badgeText(plan)) + '</span>' +
+          '<h3>' + escapeHtml(name) + '</h3>' +
+          '<p class="price">' + escapeHtml(price) + ' <span>/month</span></p>' +
+          '<ul>' + buildFeatureLis(plan) + '</ul>' +
+          '<a href="https://opulentinfluencershouse.com/dashboard/admin/index" class="' + btnClass(plan) + '" target="_blank" rel="noopener noreferrer">' +
+          escapeHtml(ctaLabel(plan)) + '</a>' +
+          paymentsBlock() +
+          '</div>'
+        );
+      })
+      .join('');
+  }
+
+  function fetchPlans(usertype) {
+    return fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ usertype: usertype })
+    }).then(function (r) {
+      return r.json();
+    });
+  }
+
+  function planTypeForUser(usertype) {
+    return usertype === 1 ? 'influencer' : 'brand';
+  }
+
+  function loadPlans(usertype) {
+    var want = planTypeForUser(usertype);
+    if (cache[usertype]) {
+      render(cache[usertype]);
+      return;
+    }
+    fetchPlans(usertype)
+      .then(function (json) {
+        if (!json || !json.success || !Array.isArray(json.data)) return;
+        var list = json.data
+          .filter(function (p) {
+            return p && String(p.plan_type).toLowerCase() === want;
+          })
+          .sort(function (a, b) {
+            return (a.sort_order || 0) - (b.sort_order || 0);
+          });
+        if (!list.length) return;
+        cache[usertype] = list;
+        render(list);
+      })
+      .catch(function () {});
+  }
+
+  function setModeUi(isInfluencer) {
+    var inner = document.getElementById('pricing-mode-inner');
+    var btnB = document.getElementById('pricing-btn-brands');
+    var btnI = document.getElementById('pricing-btn-influencers');
+    if (!inner || !btnB || !btnI) return;
+    inner.classList.toggle('is-influencer', isInfluencer);
+    btnB.classList.toggle('is-active', !isInfluencer);
+    btnI.classList.toggle('is-active', isInfluencer);
+    btnB.setAttribute('aria-selected', !isInfluencer ? 'true' : 'false');
+    btnI.setAttribute('aria-selected', isInfluencer ? 'true' : 'false');
+  }
+
+  function init() {
+    var inner = document.getElementById('pricing-mode-inner');
+    var btnB = document.getElementById('pricing-btn-brands');
+    var btnI = document.getElementById('pricing-btn-influencers');
+    if (!inner || !btnB || !btnI) return;
+
+    function applyMode(isInfluencer) {
+      setModeUi(isInfluencer);
+      loadPlans(isInfluencer ? 1 : 0);
+    }
+
+    btnB.addEventListener('click', function () { applyMode(false); });
+    btnI.addEventListener('click', function () { applyMode(true); });
+
+    applyMode(false);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+
+
+<!-- <section class="verification"> 
+<div class="verification-wrapper">-->
+
+<!-- Influencer Verification -->
+<!-- <section class="verification-section">
+<h2 class="sections-title">Influencer Verification Comparison</h2>
+
+<div class="table-container">
+<table class="verify-table">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Standard Verified</th>
+<th>Elite Verified</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Identity Check</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Engagement Scan</td>
+<td>Basic</td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td>Audience Overview</td>
+<td>Basic</td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td>Legal Compliance</td>
+<td>—</td>
+<td>Included</td>
+</tr>
+
+<tr>
+<td>Brand Safety Audit</td>
+<td>Basic</td>
+<td>Deep Audit</td>
+</tr>
+
+<tr>
+<td>Performance Benchmark</td>
+<td>—</td>
+<td>Included</td>
+</tr>
+
+<tr>
+<td>Fraud Deep Scan</td>
+<td>Basic</td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td>Dedicated Optimization</td>
+<td>—</td>
+<td>Included</td>
+</tr>
+
+<tr>
+<td>Badge</td>
+<td>Standard Verified</td>
+<td class="elite">Elite Verified Talent</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>-->
+
+
+<!-- Brand Verification -->
+<!-- <section class="verification-section">
+<h2 class="sections-title">Brand Verification Comparison</h2>
+
+<div class="table-container">
+<table class="verify-table">
+
+<thead>
+<tr>
+<th>Feature</th>
+<th>Verified Brand</th>
+<th>Premium Brand</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Trade License Check</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Email & Domain Validation</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Payment Verification</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Reputation Scan</td>
+<td>Basic</td>
+<td>Deep</td>
+</tr>
+
+<tr>
+<td>Legal Contract Review</td>
+<td>—</td>
+<td>Included</td>
+</tr>
+
+<tr>
+<td>Compliance Screening</td>
+<td>—</td>
+<td>Included</td>
+</tr>
+
+<tr>
+<td>Financial Reliability Score</td>
+<td>—</td>
+<td>Included</td>
+</tr>
+
+<tr>
+<td>Brand Safety Audit</td>
+<td>Basic</td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td>Badge</td>
+<td>Verified Brand</td>
+<td class="elite">Premium Verified Brand</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</section>
+
+</div>
+</section> -->
+
+
+
+
+
+
+
+
+
+        <!-- SERVICES SECTION START -->
+        <section class="verification">
+            <div class="container">
+                <div class="verification-heading text-center">
+                    <span class="featured-kicker verification-kicker">Trust &amp; Compliance</span>
+                    <h2 class="jo-section-title">Verification That Protects Both Sides</h2>
+                    <p>
+                        Every serious collaboration starts with trust. Our verification structure helps creators prove readiness and helps brands
+                        launch campaigns with stronger confidence, compliance, and platform safety.
+                    </p>
+                </div>
+            </div>
+
+            <div class="verification-wrapper">
+                <section class="verification-section">
+                    <div class="verification-card-head">
+                        <span class="verification-card-eyebrow">For creators</span>
+                        <h2 class="sections-title">Influencer Verification Comparison</h2>
+                        <p class="verification-card-copy">A clearer path from entry-level trust signals to premium creator readiness.</p>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="verify-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Standard Verified</th>
+                                    <th>Elite Verified</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Identity Check</td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Engagement Scan</td>
+                                    <td><span class="verify-pill">Basic</span></td>
+                                    <td><span class="verify-pill verify-pill--accent">Advanced</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Audience Overview</td>
+                                    <td><span class="verify-pill">Basic</span></td>
+                                    <td><span class="verify-pill verify-pill--accent">Advanced</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Legal Compliance</td>
+                                    <td><span class="verify-pill verify-pill--muted">Not included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Brand Safety Audit</td>
+                                    <td><span class="verify-pill">Basic</span></td>
+                                    <td><span class="verify-pill verify-pill--accent">Deep audit</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Performance Benchmark</td>
+                                    <td><span class="verify-pill verify-pill--muted">Not included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Fraud Deep Scan</td>
+                                    <td><span class="verify-pill">Basic</span></td>
+                                    <td><span class="verify-pill verify-pill--accent">Advanced</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dedicated Optimization</td>
+                                    <td><span class="verify-pill verify-pill--muted">Not included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Badge</td>
+                                    <td><span class="verify-pill">Standard verified</span></td>
+                                    <td class="elite"><span class="verify-pill verify-pill--accent">Elite verified talent</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="verification-section">
+                    <div class="verification-card-head">
+                        <span class="verification-card-eyebrow">For brands</span>
+                        <h2 class="sections-title">Brand Verification Comparison</h2>
+                        <p class="verification-card-copy">A cleaner comparison between standard brand approval and premium compliance depth.</p>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="verify-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Verified Brand</th>
+                                    <th>Premium Brand</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Trade License Check</td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Email &amp; Domain Validation</td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Payment Verification</td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Reputation Scan</td>
+                                    <td><span class="verify-pill">Basic</span></td>
+                                    <td><span class="verify-pill verify-pill--accent">Deep</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Legal Contract Review</td>
+                                    <td><span class="verify-pill verify-pill--muted">Not included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Compliance Screening</td>
+                                    <td><span class="verify-pill verify-pill--muted">Not included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Financial Reliability Score</td>
+                                    <td><span class="verify-pill verify-pill--muted">Not included</span></td>
+                                    <td><span class="verify-pill verify-pill--yes">Included</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Brand Safety Audit</td>
+                                    <td><span class="verify-pill">Basic</span></td>
+                                    <td><span class="verify-pill verify-pill--accent">Advanced</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Badge</td>
+                                    <td><span class="verify-pill">Verified brand</span></td>
+                                    <td class="elite"><span class="verify-pill verify-pill--accent">Premium verified brand</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="jo-services">
+            <div class="jo-container">
+                <div class="platform-showcase">
+                    <div class="platform-showcase__hero">
+                        <div class="platform-showcase__copy">
+                            <span class="platform-showcase__eyebrow">Self-Service Platform</span>
+                            <h2 class="jo-section-title mb-0">What You Can Do on the Platform</h2>
+                            <p class="platform-showcase__lead">
+                                A powerful self-service platform that gives you complete control over your influencer marketing from
+                                discovery to execution.
+                            </p>
+                        </div>
+                        <div class="platform-showcase__cta">
+                            <a href="service.html" class="jo-btn">View Platform Capabilities</a>
+                        </div>
+                    </div>
+
+                    <div class="platform-showcase__grid">
+                        <article class="platform-action-card">
+                            <span class="platform-action-card__number">01</span>
+                            <h3>Creator Discovery</h3>
+                            <p>Find and filter influencers, creators, celebrities, and athletes based on audience, niche, and performance insights.</p>
+                        </article>
+
+                        <article class="platform-action-card">
+                            <span class="platform-action-card__number">02</span>
+                            <h3>Direct Collaboration</h3>
+                            <p>Connect, chat, and negotiate directly with creators with no middlemen and no delays.</p>
+                        </article>
+
+                        <article class="platform-action-card">
+                            <span class="platform-action-card__number">03</span>
+                            <h3>Campaign Creation</h3>
+                            <p>Launch campaigns, define deliverables, and invite creators in minutes with full flexibility.</p>
+                        </article>
+
+                        <article class="platform-action-card">
+                            <span class="platform-action-card__number">04</span>
+                            <h3>Campaign Management</h3>
+                            <p>Track progress, approvals, and communication through a centralized dashboard.</p>
+                        </article>
+
+                        <article class="platform-action-card">
+                            <span class="platform-action-card__number">05</span>
+                            <h3>Performance Tracking</h3>
+                            <p>Monitor campaign performance, engagement, and ROI with real-time analytics.</p>
+                        </article>
+
+                        <article class="platform-action-card">
+                            <span class="platform-action-card__number">06</span>
+                            <h3>Scalable Growth Tools</h3>
+                            <p>Manage multiple campaigns, scale collaborations, and grow efficiently as your brand expands.</p>
+                        </article>
+                    </div>
+
+                    <div class="platform-capabilities">
+                        <div class="platform-capabilities__header">
+                            <h3>Platform Capabilities</h3>
+                            <p>Built for operators who need speed, visibility, and complete control over execution.</p>
+                        </div>
+
+                        <div class="platform-capabilities__list">
+                            <div class="platform-capability-item">Unlimited influencer search</div>
+                            <div class="platform-capability-item">Unlimited direct messaging</div>
+                            <div class="platform-capability-item">Unlimited campaign creation</div>
+                            <div class="platform-capability-item">Real-time campaign tracking</div>
+                            <div class="platform-capability-item">End-to-end campaign control</div>
+                        </div>
+
+                        <p class="platform-capabilities__closing">
+                            Not an agency. Not managed services. A self-service platform built for scale, speed, and control.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SERVICES SECTION END -->
+
+
+        <!-- intro & live -->
+        <div class="jo-intro-lives-wrapper">
+            <!-- INTRO SECTION START -->
+            <section class="jo-intro">
+                <div class="jo-container">
+                    <div class="row align-items-center">
+                        <!-- txt -->
+                        <div class="col-xl-6 col-lg-7 col-8">
+                            <div class="jo-intro__txt">
+                                <h2 class="jo-section-title">I'm a Social Media influencer & digital content creator</h2>
+                                <p class="jo-intro__descr">I don’t just create content — I build influence that converts.
+With a proven track record in digital marketing, brand collaborations, and audience psychology, I help businesses scale faster by turning attention into trust and trust into revenue.</p>
+
+                                <ul class="jo-intro__list">
+                                    <li>I position brands as experts, not advertisers building long-term credibility that customers trust.</li>
+                                    <li>Strategic campaigns designed to generate real engagement, qualified leads, and measurable ROI.</li>
+                                    <li>I connect brands with authentic, highly engaged audiences that take action.</li>
+                                    <li>Proven frameworks that multiply reach, increase visibility, and boost profits as you scale.</li>
+                                </ul>
+
+                                <a href="contact.html" class="jo-btn">Contact Me</a>
+                            </div>
+                        </div>
+
+                        <!-- img -->
+                        <div class="col-xl-6 col-lg-5 col-4">
+                            <div class="jo-intro__img">
+                                <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox class="play-btn"><i class="flaticon-play"></i></a>
+                                <img src="assets/img/intro-img.jpg" alt="intro image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- vector -->
+                <img src="assets/img/intro-vector.svg" alt="vector" class="jo-intro__vector">
+            </section>
+            <!-- INTRO SECTION END -->
+
+
+            <!-- UPCOMING LIVES SECTION START -->
+            <section class="jo-upcoming-lives">
+                <div class="jo-container">
+                    <!-- heading -->
+                    <div class="jo-upcoming-lives__heading">
+                        <h2 class="jo-section-title">My Upcoming Lives</h2>
+                    </div>
+
+                    <div>
+                        <!-- live card -->
+                        <div class="jo-upcoming-live">
+                            <div class="jo-upcoming-live__img">
+                                <img src="assets/img/umcoming-live-1.jpg" alt="live image">
+                            </div>
+                            <div class="jo-upcoming-live__txt">
+                                <a href="#" class="platform-tag"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Live</a>
+                                <h5 class="title">Smiley woman pop party studio medium shot</h5>
+                                <span class="date">25 Jun, 2024</span>
+                                <p class="descr">A cheerful young woman radiates energy and joy, dressed in vibrant, colorful party attire perfect for a pop-themed celebration. Her infectious smile lights up the studio, drawing attention to her expressive gestures. Captured in a medium shot from the waist up, she stands out against a subtle party-themed background with glitter, lights, or confetti, while studio lighting highlights her features and adds a lively, upbeat vibe.</p>
+                                <a href="checkout.html" class="jo-btn">Book Now</a>
+                            </div>
+                        </div>
+
+                        <!-- live card -->
+                        <div class="jo-upcoming-live">
+                            <div class="jo-upcoming-live__img">
+                                <img src="assets/img/umcoming-live-2.jpg" alt="live image">
+                            </div>
+                            <div class="jo-upcoming-live__txt">
+                                <a href="#" class="platform-tag"><img src="assets/img/social-icon-4.png" alt="platform logo">Youtube Live</a>
+                                <h5 class="title">Smiley woman pop party studio medium shot</h5>
+                                <span class="date">25 Jun, 2024</span>
+                                <p class="descr">A cheerful young woman radiates energy and joy, dressed in vibrant, colorful party attire perfect for a pop-themed celebration. Her infectious smile lights up the studio, drawing attention to her expressive gestures. Captured in a medium shot from the waist up, she stands out against a subtle party-themed background with glitter, lights, or confetti, while studio lighting highlights her features and adds a lively, upbeat vibe.</p>
+                                <a href="checkout.html" class="jo-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- UPCOMING LIVES SECTION END -->
+        </div>
+
+        <!-- VIDEOS SECTION START -->
+        <section class="jo-videos">
+            <div class="jo-container">
+                <!-- heading -->
+                <div class="jo-videos__heading">
+                    <h2 class="jo-section-title">My Latest Premium Videos</h2>
+                    <a href="videos-1.html" class="jo-btn jo-videos__btn"><i class="flaticon-premium-quality"></i> View All Videos</a>
+                </div>
+            </div>
+
+            <!-- video cards -->
+            <div class="jo-videos-slider splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo1.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">$5.00</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo2.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">$5.00</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo3.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">$5.00</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo4.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">$5.00</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="jo-videos-slider-2 splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo5.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag d-none"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">Free</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo6.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">$5.00</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo7.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">$5.00</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="jo-video-card">
+                                <img src="assets/img/jo8.jpg" alt="Video Thumbnail" class="jo-video-card__img">
+
+                                <div class="jo-video-card__txt">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="https://youtu.be/vc3WCrgYpF0?si=W2iFDfdDYsh6spKg " data-fslightbox="videos" class="jo-video-card__btn"><i class="flaticon-play"></i></a>
+                                        <span class="jo-video-card__premium-tag"><i class="flaticon-premium-quality"></i></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="price">$5.00</span>
+                                        <h5><a href="video-details.html" class="jo-video-card__title">Smiley woman pop party studio medium shot</a></h5>
+                                        <div class="tt-video__infos jo-video-card__infos">
+                                            <span>16M views</span>
+                                            <span>49 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- VIDEOS SECTION END -->
+
+
+        <!-- CONTACT SECTION START -->
+        <section class="jo-contact">
+            <div class="top">
+                <div class="jo-container">
+                    <div class="row align-items-end">
+                        <!-- contact form -->
+                        <div class="col-lg-6">
+                            <div class="jo-contact-form-wrapper">
+                                <img src="assets/img/contact-form-icon.svg" alt="icon" class="icon">
+                                <h2 class="jo-section-title">Let’s Work Together on your next Project</h2>
+                                <p>Opulent influencers house is here to help brands, influencers and sport icons !</p>
+                                <form action="#" class="jo-contact-form">
+                                    <div>
+                                        <label for="jo-contact-name">Your Name</label>
+                                        <input type="text" name="name" id="jo-contact-name" placeholder="Your Name">
+                                    </div>
+
+                                    <div>
+                                        <label for="jo-contact-email">Your Email Address</label>
+                                        <input type="email" name="email" id="jo-contact-email" placeholder="Your Email">
+                                    </div>
+
+                                    <div>
+                                        <label for="jo-contact-message">Write Message</label>
+                                        <textarea name="message" id="jo-contact-message" placeholder="Write Message..."></textarea>
+                                    </div>
+
+                                    <button type="submit" class="jo-btn">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- img -->
+                        <div class="col-lg-6 d-lg-block d-none">
+                            <div class="jo-contact__img">
+                                <img src="assets/img/contact-img.png" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="jo-container overflow-hidden">
+                    <div class="row gx-5">
+                        <div class="col-lg-6 blank-space d-none d-lg-block"></div>
+
+                        <div class="col-lg-6">
+                            <h5 class="jo-partners-title">Trusted Partners</h5>
+                            <div class="jo-partners-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <!-- single partner -->
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/partner-1.png" alt="Partner Image">
+                                    </div>
+
+                                    <!-- single partner -->
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/partner-2.png" alt="Partner Image">
+                                    </div>
+
+                                    <!-- single partner -->
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/partner-3.png" alt="Partner Image">
+                                    </div>
+
+                                    <!-- single partner -->
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/partner-4.png" alt="Partner Image">
+                                    </div>
+
+                                    <!-- single partner -->
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/partner-1.png" alt="Partner Image">
+                                    </div>
+
+                                    <!-- single partner -->
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/partner-2.png" alt="Partner Image">
+                                    </div>
+                                </div>
+
+                                <div class="jo-partners-slider-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CONTACT SECTION END -->
+
+
+        <!-- ARTICLES SECTION START -->
+        <section class="jo-articles" id="blogs">
+            <div class="jo-container">
+                <div class="text-center">
+                    <span class="featured-kicker">Insights &amp; Updates</span>
+                    <h2 class="jo-section-title">Latest Blogs</h2>
+                    <p class="section-subtitle">Practical ideas for brands and creators building stronger campaigns, partnerships, and digital visibility.</p>
+                </div>
+
+                <div class="row g-sm-4 g-3">
+                    <!-- single article -->
+                    <div class="col-lg-4 col-6 col-xxs-12">
+                        <div class="jo-article">
+                            <div class="jo-article__img">
+                                <img src="assets/img/jo-article-1.jpg" alt="Article Image">
+
+                                <div class="date">
+                                    <span class="number">08</span>
+                                    <span class="txt">Mar</span>
+                                </div>
+                            </div>
+
+                            <div class="jo-article__txt">
+                               
+                                <h4 class="jo-article__title"><a href="blog-details.html">How Verified Creators Help Brands Launch Safer, Faster Campaigns</a></h4>
+
+                                <a href="blog-details.html" class="jo-article__btn">Read More <span class="icon"><i class="flaticon-arrow-right-1"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- single article -->
+                    <div class="col-lg-4 col-6 col-xxs-12">
+                        <div class="jo-article">
+                            <div class="jo-article__img">
+                                <img src="assets/img/jo-article-2.jpg" alt="Article Image">
+
+                                <div class="date">
+                                    <span class="number">16</span>
+                                    <span class="txt">Mar</span>
+                                </div>
+                            </div>
+
+                            <div class="jo-article__txt">
+                             
+
+                                <h4 class="jo-article__title"><a href="blog-details.html">5 Things Brands Should Prepare Before Posting a Creator Campaign</a></h4>
+
+                                <a href="blog-details.html" class="jo-article__btn">Read More <span class="icon"><i class="flaticon-arrow-right-1"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- single article -->
+                    <div class="col-lg-4 col-6 col-xxs-12">
+                        <div class="jo-article">
+                            <div class="jo-article__img">
+                                <img src="assets/img/jo-article-3.jpg" alt="Article Image">
+
+                                <div class="date">
+                                    <span class="number">24</span>
+                                    <span class="txt">Mar</span>
+                                </div>
+                            </div>
+
+                            <div class="jo-article__txt">
+                               
+
+                                <h4 class="jo-article__title"><a href="blog-details.html">What Makes a Creator Profile Stand Out in a Competitive Marketplace</a></h4>
+
+                                <a href="blog-details.html" class="jo-article__btn">Read More <span class="icon"><i class="flaticon-arrow-right-1"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ARTICLES SECTION END -->
+    </main>
+
+
+    <!-- FOOTER SECTION START -->
+    <footer class="jo-footer">
+        <div class="jo-container">
+            <!-- footer top -->
+            <div class="jo-footer-top">
+                <div class="row gx-4 gy-sm-5 gy-4 align-items-center">
+                    <div class="col-lg-3 col-6 col-xxs-12">
+                        <a href="index.html"><img src="assets/img/logos.png" alt="logo" class="logo"></a>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 order-2">
+                        <!-- nwsltr -->
+                        <form action="#" class="jo-footer-top__nwsltr">
+                            <input type="email" name="jo-nwsltr-email" id="jo-nwsltr-email" placeholder="Email Address">
+                            <button class="jo-btn" type="submit">Get Newsletter</button>
+                        </form>
+                    </div>
+<!-- socials -->
+<div class="col-lg-3 col-6 col-xxs-12 order-lg-2 order-1">
+    <div class="tt-footer-top__socials jo-footer-top__socials justify-content-start justify-content-sm-end">
+        <!-- TikTok (SVG) -->
+        <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
+                <path d="M448,209.9a210.1,210.1,0,0,1-122.8-39.3V349.4A162.6,162.6,0,1,1,185,188.3V278.2a74.6,74.6,0,1,0,52.2,71.2V0l88,0a121.2,121.2,0,0,0,1.9,22.2h0A122.2,122.2,0,0,0,381,102.4a121.4,121.4,0,0,0,67,20.1Z"/>
+            </svg>
+        </a>
+        <!-- Facebook (Font Awesome) -->
+        <a href="https://www.facebook.com/profile.php?id=61585214585761" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <!-- Instagram (Font Awesome) -->
+        <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <!-- Snapchat (using Font Awesome) -->
+        <a href="https://snapchat.com/t/r6Pjgsw3" target="_blank" rel="noopener noreferrer" aria-label="Snapchat">
+            <i class="fab fa-snapchat-ghost"></i>
+        </a>
+    </div>
+</div>
+                </div>
+            </div>
+
+            <!-- footer middle -->
+            <div class="jo-footer-middle">
+    <div class="row g-4">
+        <div class="col-xl-4 col-md-6">
+            <div class="jo-footer-widget jo-footer-contact">
+                <h5 class="jo-footer-widget__title">Get in Touch</h5>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:contact.me@gmail.com">info@ulegendarydigital.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:971556173798">Call: +971 55 617 3798</a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Office # 803 - 8th Floor, White Swan Building, Trade Centre District, Sheikh Zayed Road, Dubai, United Arab Emirates.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <div class="jo-footer-widget jo-footer-links">
+                <h5 class="jo-footer-widget__title">Browse Categories</h5>
+                <div class="links">
+                    <a href="#">About Us</a>
+                    <a href="#">For Brands</a>
+                    <a href="#">For Influencers</a>
+                    <a href="#">Services</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">Conatct Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <div class="jo-footer-widget jo-footer-gallery">
+                <h5 class="jo-footer-widget__title">Instagram feed</h5>
+                <div class="imgs flex-wrap">
+                    <img src="assets/img/footer-img-1.jpg" alt="Footer Image">
+                    <img src="assets/img/footer-img-2.jpg" alt="Footer Image">
+                    <img src="assets/img/footer-img-3.jpg" alt="Footer Image">
+                    <img src="assets/img/footer-img-4.jpg" alt="Footer Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <!-- footer bottom -->
+            <div class="tt-footer-bottom text-center">
+                <p class="mb-0">Copyright ©2026 Developed by&nbsp;Ulegendary Digital</p>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+
+
+    <!-- libraries JS -->
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/vendor/slim-select/slimselect.min.js"></script>
+    <script src="assets/vendor/plyr/plyr.polyfilled.js"></script>
+    <script src="assets/vendor/no-ui-slider/nouislider.min.js"></script>
+    <script src="assets/vendor/fs-lightbox/fslightbox.js"></script>
+
+    <!-- custom js -->
+    <script src="assets/js/main.js"></script>
+    <script>
+const counters = document.querySelectorAll('.stat-number');
+let started = false;
+
+const startCount = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const suffix = counter.getAttribute('data-suffix') || '';
+    let count = 0;
+    const speed = 80;
+
+    const updateCount = () => {
+      const increment = Math.ceil(target / speed);
+      if (count < target) {
+        count += increment;
+        counter.innerText = count + suffix;
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target + suffix;
+      }
+    };
+
+    updateCount();
+  });
+};
+
+window.addEventListener('scroll', () => {
+  const section = document.querySelector('.stats-section');
+  const sectionTop = section.getBoundingClientRect().top;
+  if (sectionTop < window.innerHeight && !started) {
+    started = true;
+    startCount();
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyImages = document.querySelectorAll("img[data-src]");
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  lazyImages.forEach(img => {
+    imageObserver.observe(img);
+  });
+});
+</script>
+
+
+
+<script>
+
+let slideIndex = 0;
+const slides = document.querySelectorAll(".jo-slide");
+
+function autoSlider(){
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    slideIndex++;
+
+    if(slideIndex > slides.length){
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].classList.add("active");
+
+    setTimeout(autoSlider, 4000);
+}
+
+autoSlider();
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+if ("IntersectionObserver" in window) {
+let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+entries.forEach(function(entry) {
+if (entry.isIntersecting) {
+let lazyImage = entry.target;
+lazyImage.src = lazyImage.dataset.src;
+lazyImage.classList.remove("lazy");
+lazyImageObserver.unobserve(lazyImage);
+}
+});
+});
+
+lazyImages.forEach(function(lazyImage) {
+lazyImageObserver.observe(lazyImage);
+});
+}
+});
+</script>
+
+
+</body>
+
+</html>

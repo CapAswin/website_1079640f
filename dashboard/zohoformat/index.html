@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSV Format Converter</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>CSV Format Converter</h1>
+      <p>Upload unordered CSV data, map columns, validate rows, and export clean output.</p>
+    </header>
+
+    <section class="card upload-card">
+      <h2>1) Upload CSV</h2>
+      <div id="dropZone" class="drop-zone" aria-label="Drop CSV file here">
+        <p><strong>Drag & drop</strong> your CSV file here</p>
+        <p>or</p>
+        <label class="button" for="fileInput">Choose File</label>
+        <input id="fileInput" type="file" accept=".csv,text/csv" />
+        <p id="fileName" class="muted"></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2) Quick Setup (Recommended)</h2>
+      <div class="quick-grid">
+        <div class="mapping-item">
+          <label for="leadOwnerInput">Default Lead Owner Email *</label>
+          <input id="leadOwnerInput" type="email" placeholder="e.g. example@ulegendary.com" />
+          <p class="muted">Used when source file has no Lead Owner column.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="autoMapBtn" class="button secondary" type="button" disabled>Auto Map Best Match</button>
+        <button id="quickConvertBtn" class="button" type="button" disabled>Quick Convert</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3) Map Columns (Advanced)</h2>
+      <p class="muted">Target format: CRM template columns (Lead Owner, Company, First Name, Last Name, etc.)</p>
+      <div id="mappingContainer" class="mapping-grid"></div>
+      <div class="mapping-actions">
+        <button id="saveMappingBtn" class="button secondary" type="button">Save Mapping (Session)</button>
+        <button id="loadMappingBtn" class="button secondary" type="button">Load Mapping</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>4) Processing Options</h2>
+      <div class="controls">
+        <label>
+          <input type="radio" name="invalidMode" value="skip" checked />
+          Skip invalid rows
+        </label>
+        <label>
+          <input type="radio" name="invalidMode" value="include" />
+          Include invalid rows with warnings
+        </label>
+      </div>
+      <div class="actions">
+        <button id="processBtn" class="button" type="button" disabled>Process CSV</button>
+      </div>
+      <div id="progressWrap" class="progress-wrap hidden" aria-live="polite">
+        <div class="progress-bar">
+          <div id="progressBarFill" class="progress-bar-fill"></div>
+        </div>
+        <p id="progressText" class="muted">0%</p>
+      </div>
+      <div id="stats" class="stats"></div>
+      <div id="warnings" class="warnings"></div>
+    </section>
+
+    <section class="card">
+      <h2>5) Preview & Download</h2>
+      <div id="previewMeta" class="muted"></div>
+      <div class="table-wrap">
+        <table id="previewTable"></table>
+      </div>
+      <div class="actions">
+        <button id="downloadBtn" class="button" type="button" disabled>Download Clean CSV</button>
+        <button id="resetBtn" class="button secondary" type="button">Re-upload File</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
