@@ -7,6 +7,7 @@
     <link rel="icon" href="assets/img/fav.png" type="icon" />
 
     <title>Opulent Influencer House</title>
+    <style>html { scroll-behavior: smooth; }</style>
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/font/flaticon_jio_-_influencer.css" />
@@ -167,6 +168,209 @@
       .tt-footer-top__socials .social-icon i {
         font-size: 20px;
       }
+
+      #subscription-pricing {
+        padding: 88px 20px;
+        background: transparent;
+      }
+      #subscription-pricing .container {
+        max-width: 1240px;
+      }
+      #subscription-pricing .pricing-shell {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(32px, 4vw, 48px);
+        border-radius: 30px;
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(59, 130, 246, 0.14),
+            transparent 28%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.72) 0%,
+            rgba(255, 255, 255, 0.58) 100%
+          );
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 24px 60px rgba(59, 130, 246, 0.12);
+      }
+      #subscription-pricing .pricing-shell::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.36),
+          transparent 24%,
+          transparent 76%,
+          rgba(59, 130, 246, 0.08)
+        );
+        pointer-events: none;
+      }
+      #subscription-pricing .pricing-mode-header,
+      #subscription-pricing .pricing-mode-segment,
+      #subscription-pricing .pricing-grid {
+        position: relative;
+        z-index: 1;
+      }
+      #subscription-pricing .pricing-mode-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      #subscription-pricing .pricing-kicker {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 18px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(0, 115, 234, 0.12);
+        border: 1px solid rgba(0, 115, 234, 0.26);
+        color: #1e3a8a;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      #subscription-pricing .section-title {
+        margin-bottom: 14px;
+        color: #1f2937;
+        font-size: clamp(34px, 4.8vw, 54px);
+        line-height: 1.08;
+      }
+      #subscription-pricing .pricing-mode-sub {
+        margin: 0.5rem auto 0;
+        max-width: 34rem;
+        font-size: 1rem;
+        line-height: 1.75;
+        color: #4b5563;
+        font-weight: 400;
+      }
+      #subscription-pricing .pricing-mode-segment__inner {
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow:
+          inset 0 1px 1px rgba(255, 255, 255, 0.35),
+          inset 0 -1px 2px rgba(31, 41, 55, 0.06);
+      }
+      #subscription-pricing .pricing-mode-segment__pill {
+        background: linear-gradient(135deg, #0073ea 0%, #8fc5ff 100%);
+        box-shadow:
+          0 12px 26px rgba(0, 115, 234, 0.24),
+          0 1px 2px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+      }
+      #subscription-pricing .pricing-mode-segment__btn {
+        color: #4b5563;
+      }
+      #subscription-pricing .pricing-mode-segment__btn:hover:not(.is-active) {
+        color: #1f2937;
+      }
+      #subscription-pricing .pricing-mode-segment__btn.is-active {
+        color: #111418;
+      }
+      #subscription-pricing .pricing-mode-segment__btn:focus-visible {
+        box-shadow:
+          0 0 0 2px rgba(255, 255, 255, 0.2),
+          0 0 0 4px rgba(0, 115, 234, 0.45);
+      }
+      @media (max-width: 768px) {
+        #subscription-pricing {
+          padding: 72px 20px;
+        }
+      }
+
+      #subscription-pricing {
+        background: transparent;
+      }
+      #subscription-pricing .container {
+        max-width: 1320px;
+      }
+      #subscription-pricing .pricing-shell {
+        padding: clamp(28px, 3vw, 40px);
+        border-radius: 34px;
+        background:
+          radial-gradient(circle at top left, rgba(98, 214, 199, 0.14), transparent 22%),
+          radial-gradient(circle at top right, rgba(230, 171, 88, 0.16), transparent 26%),
+          linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.70) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        box-shadow:
+          0 30px 80px rgba(15, 23, 42, 0.08),
+          inset 0 1px 0 rgba(255,255,255,0.7);
+      }
+      #subscription-pricing .pricing-shell::before {
+        background:
+          linear-gradient(120deg, rgba(255,255,255,0.42), transparent 28%, transparent 72%, rgba(98,214,199,0.08));
+      }
+      #subscription-pricing .pricing-mode-header {
+        text-align: left;
+        margin-bottom: 2rem;
+      }
+      #subscription-pricing .pricing-kicker {
+        background: rgba(255,255,255,0.74);
+        border-color: rgba(15, 23, 42, 0.06);
+        color: #0f172a;
+      }
+      #subscription-pricing .section-title {
+        font-size: clamp(38px, 4.2vw, 58px);
+        letter-spacing: -0.04em;
+      }
+      #subscription-pricing .pricing-mode-sub {
+        margin-left: 0;
+        max-width: 40rem;
+      }
+      #subscription-pricing .pricing-mode-segment {
+        justify-content: flex-end;
+        margin-top: -72px;
+        margin-bottom: 2.2rem;
+      }
+      #subscription-pricing .pricing-mode-segment__inner {
+        max-width: 272px;
+        padding: 7px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(239, 239, 237, 0.94) 100%);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.8),
+          0 16px 30px rgba(15, 23, 42, 0.08);
+      }
+      #subscription-pricing .pricing-mode-segment__pill {
+        top: 7px;
+        left: 7px;
+        bottom: 7px;
+        width: calc(50% - 7px);
+        border-radius: 999px;
+        background: linear-gradient(180deg, #1b2230 0%, #111827 100%);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow:
+          0 10px 20px rgba(15, 23, 42, 0.18),
+          inset 0 1px 0 rgba(255,255,255,0.08);
+      }
+      #subscription-pricing .pricing-mode-segment__btn {
+        min-height: 56px;
+        padding: 0 12px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.10em;
+        color: #5b6472;
+      }
+      #subscription-pricing .pricing-mode-segment__btn.is-active {
+        color: #ffffff;
+      }
+      @media (max-width: 991px) {
+        #subscription-pricing .pricing-mode-header {
+          text-align: center;
+        }
+        #subscription-pricing .pricing-mode-sub {
+          margin-right: auto;
+          margin-left: auto;
+        }
+        #subscription-pricing .pricing-mode-segment {
+          justify-content: center;
+          margin-top: 0;
+        }
+      }
     </style>
   </head>
 
@@ -290,6 +494,9 @@
             <div class="col-lg-7">
               <div class="jo-banner__txt">
                 <section class="hero-title">
+                  <span class="hero-title__eyebrow"
+                    >Dubai-based influence infrastructure</span
+                  >
                   <h1 class="heros-title__heading">
                     The
                     <span class="hero-title__highlight"
@@ -302,6 +509,21 @@
                     verified creators with serious brands through structure,
                     compliance, and measurable results.
                   </p>
+
+                  <div class="hero-title__signals">
+                    <div class="hero-signal-card">
+                      <strong>500+</strong>
+                      <span>Verified creators</span>
+                    </div>
+                    <div class="hero-signal-card">
+                      <strong>150+</strong>
+                      <span>Brand partners</span>
+                    </div>
+                    <div class="hero-signal-card">
+                      <strong>98%</strong>
+                      <span>Client retention</span>
+                    </div>
+                  </div>
                 </section>
 
                 <div class="jo-banner__btns">
@@ -534,13 +756,22 @@
       <section class="jo-reels">
         <div class="jo-container">
           <div class="jo-reels-heading">
-            <button class="jo-slider-nav-btn jo-reels-slider-prev">
-              <i class="flaticon-left-arrow"></i>
-            </button>
-            <h2 class="jo-section-title">Latest Video Reels</h2>
-            <button class="jo-slider-nav-btn jo-reels-slider-next">
-              <i class="flaticon-right-arrow"></i>
-            </button>
+            <div class="jo-reels-heading__copy">
+              <span class="jo-reels-heading__eyebrow">Featured Media</span>
+              <h2 class="jo-section-title">Latest Video Reels</h2>
+              <p class="jo-reels-heading__sub">
+                A curated stream of creator content, campaign-ready visuals,
+                and high-attention moments built for modern brand storytelling.
+              </p>
+            </div>
+            <div class="jo-reels-heading__nav">
+              <button class="jo-slider-nav-btn jo-reels-slider-prev">
+                <i class="flaticon-left-arrow"></i>
+              </button>
+              <button class="jo-slider-nav-btn jo-reels-slider-next">
+                <i class="flaticon-right-arrow"></i>
+              </button>
+            </div>
           </div>
         </div>
         <div class="jo-reels-container">
@@ -563,6 +794,7 @@
                     >
                   </div>
                   <div class="jo-reel-txt">
+                    <span class="jo-reel-chip">Campaign-ready</span>
                     <h5 class="jo-reel-title">
                       <a href="#">Can Robot Solve This ...?</a>
                     </h5>
@@ -591,6 +823,7 @@
                     >
                   </div>
                   <div class="jo-reel-txt">
+                    <span class="jo-reel-chip">Audience growth</span>
                     <h5 class="jo-reel-title">
                       <a href="#">Can Robot Solve This ...?</a>
                     </h5>
@@ -619,6 +852,7 @@
                     >
                   </div>
                   <div class="jo-reel-txt">
+                    <span class="jo-reel-chip">Performance content</span>
                     <h5 class="jo-reel-title">
                       <a href="#">Can Robot Solve This ...?</a>
                     </h5>
@@ -647,6 +881,7 @@
                     >
                   </div>
                   <div class="jo-reel-txt">
+                    <span class="jo-reel-chip">Creator spotlight</span>
                     <h5 class="jo-reel-title">
                       <a href="#">Can Robot Solve This ...?</a>
                     </h5>
@@ -675,6 +910,7 @@
                     >
                   </div>
                   <div class="jo-reel-txt">
+                    <span class="jo-reel-chip">Brand activation</span>
                     <h5 class="jo-reel-title">
                       <a href="#">Can Robot Solve This ...?</a>
                     </h5>
@@ -703,6 +939,7 @@
                     >
                   </div>
                   <div class="jo-reel-txt">
+                    <span class="jo-reel-chip">Trend-led content</span>
                     <h5 class="jo-reel-title">
                       <a href="#">Can Robot Solve This ...?</a>
                     </h5>
@@ -731,6 +968,7 @@
                     >
                   </div>
                   <div class="jo-reel-txt">
+                    <span class="jo-reel-chip">Viral format</span>
                     <h5 class="jo-reel-title">
                       <a href="#">Can Robot Solve This ...?</a>
                     </h5>
@@ -747,19 +985,26 @@
       </section>
       <!-- REELS SECTION END -->
       <section class="cta-section">
-        <div class="cta-content">
-          <h1>Ready to <span>Transform</span> Your Influence Strategy?</h1>
+        <div class="jo-container">
+          <div class="cta-shell">
+            <div class="cta-content">
+              <span class="cta-kicker">Next Step</span>
+              <h2 class="jo-section-title">
+                Ready to <span>Transform</span> Your Influence Strategy?
+              </h2>
 
-          <p>
-            Whether you're a brand seeking verified talent or an influencer
-            looking to elevate your career, we're here to help.
-          </p>
+              <p>
+                Whether you're a brand seeking verified talent or an influencer
+                looking to elevate your career, we're here to help.
+              </p>
+            </div>
 
-          <div class="cta-buttons">
-            <a href="brand-form.html" class="btn btn-filled">I'M A BRAND</a>
-            <a href="influencer-form.html" class="btn btn-outline"
-              >I'M AN INFLUENCER</a
-            >
+            <div class="cta-buttons">
+              <a href="brand-form.html" class="btn btn-filled">I'M A BRAND</a>
+              <a href="influencer-form.html" class="btn btn-outline"
+                >I'M AN INFLUENCER</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -977,53 +1222,56 @@
 
       <section class="pricing-section" id="subscription-pricing">
         <div class="container">
-          <div class="pricing-mode-header">
-            <h2 class="section-title">Plans &amp; Pricing</h2>
-            <p class="pricing-mode-sub">
-              Switch between brand and creator plans. All prices in AED per
-              month.
-            </p>
-          </div>
-          <div
-            class="pricing-mode-segment"
-            role="tablist"
-            aria-label="Pricing audience"
-          >
-            <div class="pricing-mode-segment__inner" id="pricing-mode-inner">
-              <span
-                class="pricing-mode-segment__pill"
-                aria-hidden="true"
-              ></span>
-              <button
-                type="button"
-                class="pricing-mode-segment__btn is-active"
-                id="pricing-btn-brands"
-                role="tab"
-                aria-selected="true"
-                aria-controls="subscription-pricing-grid"
-                data-pricing-mode="brand"
-              >
-                For Brands
-              </button>
-              <button
-                type="button"
-                class="pricing-mode-segment__btn"
-                id="pricing-btn-influencers"
-                role="tab"
-                aria-selected="false"
-                aria-controls="subscription-pricing-grid"
-                data-pricing-mode="influencer"
-              >
-                For Influencers
-              </button>
+          <div class="pricing-shell">
+            <div class="pricing-mode-header">
+              <span class="pricing-kicker">Pricing Studio</span>
+              <h2 class="section-title">Plans &amp; Pricing</h2>
+              <p class="pricing-mode-sub">
+                Switch between brand and creator plans. All prices in AED per
+                month.
+              </p>
             </div>
+            <div
+              class="pricing-mode-segment"
+              role="tablist"
+              aria-label="Pricing audience"
+            >
+              <div class="pricing-mode-segment__inner" id="pricing-mode-inner">
+                <span
+                  class="pricing-mode-segment__pill"
+                  aria-hidden="true"
+                ></span>
+                <button
+                  type="button"
+                  class="pricing-mode-segment__btn is-active"
+                  id="pricing-btn-brands"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="subscription-pricing-grid"
+                  data-pricing-mode="brand"
+                >
+                  For Brands
+                </button>
+                <button
+                  type="button"
+                  class="pricing-mode-segment__btn"
+                  id="pricing-btn-influencers"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="subscription-pricing-grid"
+                  data-pricing-mode="influencer"
+                >
+                  For Influencers
+                </button>
+              </div>
+            </div>
+            <div
+              class="pricing-grid"
+              id="subscription-pricing-grid"
+              role="tabpanel"
+              aria-live="polite"
+            ></div>
           </div>
-          <div
-            class="pricing-grid"
-            id="subscription-pricing-grid"
-            role="tabpanel"
-            aria-live="polite"
-          ></div>
         </div>
       </section>
 
@@ -2301,12 +2549,14 @@
                     alt="icon"
                     class="icon"
                   />
-                  <h2 class="jo-section-title">
+                  <span class="jo-contact-kicker">Start a Conversation</span>
+                  <h2 class="jo-section-title jo-contact-title">
                     Let’s Work Together on your next Project
                   </h2>
                   <p>
-                    Opulent influencers house is here to help brands,
-                    influencers and sport icons !
+                    Opulent Influencers House is here to support brands,
+                    influencers, and sports icons with standout campaigns and
+                    meaningful partnerships.
                   </p>
                   <form action="#" class="jo-contact-form">
                     <div>
@@ -2508,151 +2758,73 @@
     </main>
 
     <!-- FOOTER SECTION START -->
-    <footer class="jo-footer">
-      <div class="jo-container">
-        <!-- footer top -->
-        <div class="jo-footer-top">
-          <div class="row gx-4 gy-sm-5 gy-4 align-items-center">
-            <div class="col-lg-3 col-6 col-xxs-12">
-              <a href="index.html"
-                ><img src="assets/img/logos.png" alt="logo" class="logo"
-              /></a>
+    <footer class="oih-footer">
+      <div class="oih-footer__inner jo-container">
+
+        <!-- Top: brand + newsletter -->
+        <div class="oih-footer__top">
+          <div class="oih-footer__brand">
+            <a href="index.html" class="oih-footer__logo">
+              <img src="assets/img/logos.png" alt="Opulent Influencers House" />
+            </a>
+            <p class="oih-footer__tagline">Connecting verified creators with serious brands through structure, compliance, and measurable results.</p>
+            <div class="oih-footer__socials">
+              <a href="https://www.tiktok.com/@opulentinfluencershouse" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61585214585761" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/opulentinfluencershouse/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://snapchat.com/t/r6Pjgsw3" target="_blank" rel="noopener" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
             </div>
-            <div class="col-lg-6 order-lg-1 order-2">
-              <!-- nwsltr -->
-              <form action="#" class="jo-footer-top__nwsltr">
-                <input
-                  type="email"
-                  name="jo-nwsltr-email"
-                  id="jo-nwsltr-email"
-                  placeholder="Email Address"
-                />
-                <button class="jo-btn" type="submit">Get Newsletter</button>
-              </form>
-            </div>
-            <!-- socials -->
-            <div class="col-lg-3 col-6 col-xxs-12 order-lg-2 order-1">
-              <div
-                class="tt-footer-top__socials jo-footer-top__socials justify-content-start justify-content-sm-end"
-              >
-                <!-- TikTok (SVG) -->
-                <a
-                  href="https://www.tiktok.com/@opulentinfluencershouse"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="TikTok"
-                  class="social-icon"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    width="20"
-                    height="20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M448,209.9a210.1,210.1,0,0,1-122.8-39.3V349.4A162.6,162.6,0,1,1,185,188.3V278.2a74.6,74.6,0,1,0,52.2,71.2V0l88,0a121.2,121.2,0,0,0,1.9,22.2h0A122.2,122.2,0,0,0,381,102.4a121.4,121.4,0,0,0,67,20.1Z"
-                    />
-                  </svg>
-                </a>
-                <!-- Facebook (Font Awesome) -->
-                <a
-                  href="https://www.facebook.com/profile.php?id=61585214585761"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  class="social-icon"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <!-- Instagram (Font Awesome) -->
-                <a
-                  href="https://www.instagram.com/opulentinfluencershouse/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  class="social-icon"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <!-- Snapchat (using Font Awesome) -->
-                <a
-                  href="https://snapchat.com/t/r6Pjgsw3"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Snapchat"
-                >
-                  <i class="fab fa-snapchat-ghost"></i>
-                </a>
-              </div>
-            </div>
+          </div>
+
+          <div class="oih-footer__newsletter">
+            <span class="oih-footer__nl-label">Stay in the loop</span>
+            <h4 class="oih-footer__nl-heading">Get campaign insights &amp; platform updates</h4>
+            <form class="oih-footer__nl-form" onsubmit="return false;">
+              <input type="email" placeholder="Your email address" aria-label="Email address" />
+              <button type="submit" class="jo-btn">Subscribe</button>
+            </form>
           </div>
         </div>
 
-        <!-- footer middle -->
-        <div class="jo-footer-middle">
-          <div class="row g-4">
-            <div class="col-xl-4 col-md-6">
-              <div class="jo-footer-widget jo-footer-contact">
-                <h5 class="jo-footer-widget__title">Get in Touch</h5>
-
-                <div class="contact-item">
-                  <i class="fas fa-envelope"></i>
-                  <a href="mailto:contact.me@gmail.com"
-                    >info@ulegendarydigital.com</a
-                  >
-                </div>
-
-                <div class="contact-item">
-                  <i class="fas fa-phone-alt"></i>
-                  <a href="tel:971556173798">Call: +971 55 617 3798</a>
-                </div>
-
-                <div class="contact-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span
-                    >Office # 803 - 8th Floor, White Swan Building, Trade Centre
-                    District, Sheikh Zayed Road, Dubai, United Arab
-                    Emirates.</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-6">
-              <div class="jo-footer-widget jo-footer-links">
-                <h5 class="jo-footer-widget__title">Browse Categories</h5>
-                <div class="links">
-                  <a href="#">About Us</a>
-                  <a href="#">For Brands</a>
-                  <a href="#">For Influencers</a>
-                  <a href="#">Services</a>
-                  <a href="#">Blogs</a>
-                  <a href="#">Conatct Us</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-6">
-              <div class="jo-footer-widget jo-footer-gallery">
-                <h5 class="jo-footer-widget__title">Instagram feed</h5>
-                <div class="imgs flex-wrap">
-                  <img src="assets/img/footer-img-1.jpg" alt="Footer Image" />
-                  <img src="assets/img/footer-img-2.jpg" alt="Footer Image" />
-                  <img src="assets/img/footer-img-3.jpg" alt="Footer Image" />
-                  <img src="assets/img/footer-img-4.jpg" alt="Footer Image" />
-                </div>
-              </div>
-            </div>
+        <!-- Middle: links grid -->
+        <div class="oih-footer__mid">
+          <div class="oih-footer__col">
+            <h6 class="oih-footer__col-title">Company</h6>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="oih-footer__col">
+            <h6 class="oih-footer__col-title">Platform</h6>
+            <ul>
+              <li><a href="for-brands.html">For Brands</a></li>
+              <li><a href="for-influencers.html">For Influencers</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+          </div>
+          <div class="oih-footer__col">
+            <h6 class="oih-footer__col-title">Contact</h6>
+            <ul class="oih-footer__contact-list">
+              <li><i class="fas fa-envelope"></i><a href="mailto:info@ulegendarydigital.com">info@ulegendarydigital.com</a></li>
+              <li><i class="fas fa-phone"></i><a href="tel:+971556173798">+971 55 617 3798</a></li>
+              <li><i class="fas fa-map-marker-alt"></i><span>Dubai, UAE</span></li>
+            </ul>
           </div>
         </div>
 
-        <!-- footer bottom -->
-        <div class="tt-footer-bottom text-center">
-          <p class="mb-0">
-            Copyright ©2026 Developed by&nbsp;Ulegendary Digital
-          </p>
+        <!-- Bottom bar -->
+        <div class="oih-footer__bottom">
+          <p>&copy; 2026 Opulent Influencers House. All rights reserved.</p>
+          <div class="oih-footer__bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </div>
         </div>
+
       </div>
     </footer>
     <!-- FOOTER SECTION END -->
