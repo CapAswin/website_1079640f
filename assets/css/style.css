@@ -38,7 +38,7 @@ CSS INDEX
 28. Blog Details Page
 
 */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* Google Fonts loaded via HTML <link> for better performance */
 :root {
   --ttRed: #FF0000;
   --ttLightRed: #F2EEEA;
@@ -49,7 +49,7 @@ CSS INDEX
   --tt-pink: #F820A3;
   --tt-gold: #FFA945;
   --tt-gradient-1: linear-gradient(90deg, var(--tt-pink) 0%, var(--tt-gold) 100%);
-  --font-inter: 'Poppins';
+  --font-poppins: 'Poppins', sans-serif;
   --plyr-color-main: var(--ttRed);
 }
 
@@ -58,7 +58,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins);
   margin: auto;
   background: #ffffff;
 }
