@@ -2082,6 +2082,7 @@ input {
 }
 .jo-video-card__img {
   width: 100%;
+  aspect-ratio: 400/260;
   object-fit: contain;
   background-color: #f5f5f5;
 }
