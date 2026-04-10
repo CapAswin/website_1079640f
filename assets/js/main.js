@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         else if (window.innerWidth > 992) {
             etHeaderNavContainer.appendChild(etMobileMenuContent);
         };
-    });
+    }, { passive: true });
     etSidebarOpenBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         etSidebar.classList.add("active");
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 slidesPerView: 3,
                 spaceBetween: 20,
             },
-            768: {
+            1024: {
                 slidesPerView: 4,
                 spaceBetween: 20,
             },

@@ -42,21 +42,36 @@
     <!-- Favicon -->
     <link rel="icon" href="assets/img/fav.png" type="image/png">
 
+    <!-- Google Fonts: async load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"></noscript>
+
+    <!-- DNS prefetch for external origins -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
     <!-- Preconnect -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload LCP hero image -->
-    <link rel="preload" as="image" href="assets/img/jo1.jpg">
+    <link rel="preload" as="image" href="assets/img/jo1.jpg" fetchpriority="high">
 
-    <!-- libraries CSS -->
+    <!-- Critical CSS: icon font + layout libs -->
     <link rel="stylesheet" href="assets/font/flaticon_jio_-_influencer.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
-    <link rel="stylesheet" href="assets/vendor/plyr/plyr.css">
-    <link rel="stylesheet" href="assets/vendor/slim-select/slimselect.css">
-    <link rel="stylesheet" href="assets/vendor/no-ui-slider/nouislider.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+    <!-- Deferred non-critical CSS -->
+    <link rel="stylesheet" href="assets/vendor/plyr/plyr.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/vendor/plyr/plyr.css"></noscript>
+
+    <!-- Font Awesome: load async, only brands + solid subsets needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"></noscript>
 
     <!-- custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -578,7 +593,7 @@ brands through structure, compliance, and measurable results.
                         <div class="swiper-slide">
                             <div class="jo-reel">
                                 <div class="jo-reel-video position-relative">
-                                    <video controls poster="assets/img/reel-thumb7.jpg" src="c:\Users\ADMIN\Downloads\opulent-influencer\main-file\assets\img\reel-thumb7.mp4"></video>
+                                    <video controls poster="assets/img/reel-thumb7.jpg" src="https://videos.pexels.com/video-files/3402899/3402899-sd_506_960_25fps.mp4"></video>
                                     <a href="#" class="link"><img src="assets/img/social-icon-1.png" alt="platform logo">Facebook Reel</a>
                                 </div>
                                 <div class="jo-reel-txt">
@@ -2046,12 +2061,13 @@ const startCount = () => {
 
 window.addEventListener('scroll', () => {
   const section = document.querySelector('.stats-section');
+  if (!section) return;
   const sectionTop = section.getBoundingClientRect().top;
   if (sectionTop < window.innerHeight && !started) {
     started = true;
     startCount();
   }
-});
+}, { passive: true });
 </script>
 
 
@@ -2080,24 +2096,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script>
 
-let slideIndex = 0;
-const slides = document.querySelectorAll(".jo-slide");
-
-function autoSlider(){
-    slides.forEach(slide => slide.classList.remove("active"));
-
-    slideIndex++;
-
-    if(slideIndex > slides.length){
-        slideIndex = 1;
-    }
-
-    slides[slideIndex - 1].classList.add("active");
-
-    setTimeout(autoSlider, 4000);
-}
-
-autoSlider();
+(function(){
+  const slides = document.querySelectorAll(".jo-slide");
+  if (!slides.length) return;
+  let slideIndex = 0;
+  setInterval(function(){
+    slides[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }, 4000);
+})();
 
 </script>
 
